@@ -1,0 +1,35 @@
+.headerContainer{
+    height: 600px;
+    background-image: url(../.././assets/images//header-img.png);
+    background-size: cover;
+    background-position: 0;
+    position: relative;
+
+}
+
+.headerDiv{
+    position: absolute;
+    top: 300px;
+    left: 108px;
+    width: 295px;
+
+
+    .headerText{
+        height: 130px;
+        font-size: 34px;
+        color: #0C0C0C;
+        line-height: 180%;
+        font-family: 'SansMt';
+        font-style: italic;
+    }
+
+    .headerBtn{
+        width: 184px;
+        height: 40px;
+        border: none;
+        font-size: 14px;
+        margin-top: 28px;
+        color: #0C0C0C;
+        background-color: white;
+    }
+}
