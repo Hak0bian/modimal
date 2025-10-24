@@ -33,10 +33,27 @@ img {
 
 body{
     font-family: Montserrat;
-    display: flex;
-    justify-content: center;
+    color: #0C0C0C;
 }
 
-.container{
-    width: 1440px;
+.titleDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 88px 0 24px 0;
+    
+    h2{
+        font-weight: 600;
+        line-height: 1.4;
+    }
+}
+
+.btn{
+    width: 185px;
+    height: 40px;
+    border: none;
+    font-size: 14px;
+    background-color: white;
+    letter-spacing: .2px;
+    cursor: pointer;
 }

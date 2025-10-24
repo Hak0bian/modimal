@@ -9,30 +9,28 @@ import './Navigation.css'
 const Navigation = () => {
     return (
         <nav className='navbar'>
-            <div className="container">
-                <div className='navTopDiv'>
-                    <p>Enjoy Free Shipping On All Orders</p>
+            <div className='navTopDiv'>
+                <p>Enjoy Free Shipping On All Orders</p>
+            </div>
+            <div className='navMainDiv'>
+                <div className="logoDiv">
+                    <img src={logo} alt="logo" className='logo'/>
+                    <p className='logoText'>women clothing</p>
                 </div>
-                <div className='navMainDiv'>
-                    <div className="logoDiv">
-                        <img src={logo} alt="logo" className='logo'/>
-                        <p className='logoText'>women clothing</p>
-                    </div>
 
-                    <div className="navMenuDiv">
-                        <NavLink to={'/Collection'}>Collection</NavLink>
-                        <NavLink to={'/NewIn'}>New In</NavLink>
-                        <NavLink to={'/ModiWeek'}>ModiWeek</NavLink>
-                        <NavLink to={'/PlusSize'}>Plus Size</NavLink>
-                        <NavLink to={'/Sustainability'}>Sustainability</NavLink>
-                    </div>
+                <div className="navMenuDiv">
+                    <NavLink to={'/Collection'}>Collection</NavLink>
+                    <NavLink to={'/NewIn'}>New In</NavLink>
+                    <NavLink to={'/ModiWeek'}>ModiWeek</NavLink>
+                    <NavLink to={'/PlusSize'}>Plus Size</NavLink>
+                    <NavLink to={'/Sustainability'}>Sustainability</NavLink>
+                </div>
 
-                    <div className="navIconsDiv">
-                        <img src={searchLogo} alt="searchLogo" />
-                        <img src={profileLogo} alt="profileLogo" />
-                        <img src={favoriteLogo} alt="favoriteLogo" />
-                        <img src={bagLogo} alt="bagLogo" />
-                    </div>
+                <div className="navIconsDiv">
+                    <img src={searchLogo} alt="searchLogo" />
+                    <img src={profileLogo} alt="profileLogo" />
+                    <img src={favoriteLogo} alt="favoriteLogo" />
+                    <img src={bagLogo} alt="bagLogo" />
                 </div>
             </div>
         </nav>

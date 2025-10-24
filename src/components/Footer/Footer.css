@@ -1,0 +1,121 @@
+.footer{
+    max-width: 1440px;
+    margin: auto;
+    margin-top: 48px;
+    padding: 52px 0 32px 0;
+    background-color: #404040;
+    color: white;
+}
+
+.footerContainer{
+    max-width: 1224px;
+    margin: auto;
+    display: flex;
+    position: relative;
+}
+
+.footerLeft{
+    width: 612px;
+    padding-right: 104px;
+
+    .joinText{
+        font-weight: 700;
+        line-height: 1.4;
+        padding-bottom: 24px;
+    }
+
+    .inputDiv{
+        display: flex;
+        border: 1px solid #D1D9CF;
+        padding: 0 16px;
+        
+        input{
+            width: 496px;
+            height: 40px;
+            background: none;
+            border: none;
+            outline: none;
+            color: white;
+        }
+
+        ::placeholder{
+            color: #D1D9CF;
+        }
+
+        button{
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    .agreeDiv{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding-top: 16px;
+
+        p{
+            font-size: 12px;
+            letter-spacing: .8px;
+            font-weight: 600;
+        }
+
+        input{
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .socialMediaDiv{
+        display: flex;
+        gap: 16px;
+        padding: 104px 0 44px;
+
+        button{
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    .rightsTextDiv{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        p{
+            font-size: 12px;
+            color: #D1D9CF;
+        }
+    }
+}
+
+.footerRight{
+    width: 560px;
+    display: flex;
+    justify-content: space-between;
+
+    h3{
+        font-weight: 700;
+        line-height: 1.4;
+        padding-bottom: 24px;
+    }
+
+    li{
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 8px;
+        font-weight: 300;
+        cursor: pointer;
+    }
+
+    .chat{
+        position: absolute;
+        right: 0;
+        bottom: 24px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+}

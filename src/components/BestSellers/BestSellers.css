@@ -1,0 +1,72 @@
+.bestSection{
+    max-width: 1224px;
+    margin: auto;
+}
+
+.bestCardsDiv{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    .bestImgDiv{
+        max-width: 392px;
+        max-height: 438px;
+    }
+
+    .mainInfoDiv{
+        padding: 6px 8px;
+
+        .bestTitle{
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .infoDiv{
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            line-height: 1.8;
+        }
+
+        .price{
+            font-weight: 700;
+        }
+    }
+
+    .colorsDiv{
+        display: flex;
+        gap: 8px;
+    }
+
+    .black, 
+    .lightblue, 
+    .darkblue,
+    .green,
+    .olivie,
+    .pink{
+        width: 24PX;
+        height: 24PX;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+    }
+
+    .black{
+        background-color: #0C0C0C;
+    }
+    .lightblue{
+        background-color: #7DC3EB;
+    }
+    .darkblue{
+        background-color: #19418E         ;
+    }
+    .green{
+        background-color: #748C70;
+    }
+    .olivie{
+        background-color: #909225;
+    }
+    .pink{
+        background-color: #D0A5EA;
+    }
+}

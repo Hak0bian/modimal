@@ -1,10 +1,11 @@
-.headerContainer{
+.header{
+    max-width: 1440px;
     height: 600px;
     background-image: url(../.././assets/images//header-img.png);
     background-size: cover;
     background-position: 0;
     position: relative;
-
+    margin: auto;
 }
 
 .headerDiv{
@@ -17,19 +18,9 @@
     .headerText{
         height: 130px;
         font-size: 34px;
-        color: #0C0C0C;
-        line-height: 180%;
+        line-height: 1.8;
         font-family: 'SansMt';
         font-style: italic;
-    }
-
-    .headerBtn{
-        width: 184px;
-        height: 40px;
-        border: none;
-        font-size: 14px;
-        margin-top: 28px;
-        color: #0C0C0C;
-        background-color: white;
+        margin-bottom: 28px;
     }
 }
