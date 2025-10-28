@@ -1,3 +1,6 @@
+@config "../tailwind.config.js"; 
+@tailwind utilities;
+
 @font-face {
     font-family: 'Montserrat';
     src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
@@ -11,6 +14,8 @@
     font-weight: 100 900;
     font-style: normal;
 }
+
+/* Global CSS Resets */
 
 * {
     margin: 0;
@@ -31,10 +36,7 @@ img {
     max-width: 100%;
 }
 
-body{
-    font-family: Montserrat;
-    color: #0C0C0C;
-}
+/* Custom Styles */
 
 .titleDiv{
     display: flex;
@@ -43,6 +45,7 @@ body{
     padding: 88px 0 24px 0;
     
     h2{
+        font-size: 32px;
         font-weight: 600;
         line-height: 1.4;
     }
@@ -56,4 +59,76 @@ body{
     background-color: white;
     letter-spacing: .2px;
     cursor: pointer;
+}
+
+.navMenuItem{
+    font-size: 18px;
+    color: #404040;
+    width: 104px;
+    text-align: center;
+}
+
+
+/* Global Styles For BestSellers Component */
+
+.bestCardsDiv{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    .bestImgDiv{
+        max-width: 392px;
+        max-height: 438px;
+    }
+
+    .mainInfoDiv{
+        padding: 6px 8px;
+
+        .bestTitle{
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .infoDiv{
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            line-height: 1.8;
+        }
+
+        .price{
+            font-weight: 700;
+        }
+    }
+
+    .colorsDiv{
+        display: flex;
+        gap: 8px;
+    }
+
+    .color{
+        width: 24PX;
+        height: 24PX;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+/* Global Styles For Footer */
+
+.footerRight{
+    h3{
+        font-weight: 700;
+        line-height: 1.4;
+        padding-bottom: 24px;
+    }
+
+    li{
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 8px;
+        font-weight: 300;
+        cursor: pointer;
+    }
 }
