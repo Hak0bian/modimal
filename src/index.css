@@ -21,6 +21,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: montserrat;
 }
 
 a {
@@ -66,6 +67,14 @@ img {
     color: #404040;
     width: 104px;
     text-align: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: .3s linear;
+
+    &:hover{
+        color: #748C70;
+    }
 }
 
 
@@ -131,4 +140,13 @@ img {
         font-weight: 300;
         cursor: pointer;
     }
+}
+
+
+
+.collMenuItem{
+    font-size: 18px;
+    line-height: 1.8;
+    color: #404040;
+    margin: 4px 0;
 }

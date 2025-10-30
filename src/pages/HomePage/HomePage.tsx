@@ -1,4 +1,4 @@
-import { Header, BestSellers, Collection, Sustainability, FollowUs } from "../../components"
+import { Header, BestSellers, Collection, Sustainability, FollowUs, ModiweekSlider } from "../../components"
 
 const HomePage = () => {
     return (
@@ -6,6 +6,7 @@ const HomePage = () => {
             <Header />
             <BestSellers />
             <Collection />
+            <ModiweekSlider />
             <Sustainability />
             <FollowUs />
         </section>
