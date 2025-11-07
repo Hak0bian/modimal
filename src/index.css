@@ -1,5 +1,7 @@
 @config "../tailwind.config.js"; 
-@tailwind utilities;
+@import "tailwindcss/preflight";
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
 
 @font-face {
     font-family: 'Montserrat';
@@ -14,6 +16,7 @@
     font-weight: 100 900;
     font-style: normal;
 }
+
 
 /* Global CSS Resets */
 
@@ -37,36 +40,39 @@ img {
     max-width: 100%;
 }
 
+
 /* Custom Styles */
 
-.titleDiv{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 88px 0 24px 0;
-    
-    h2{
-        font-size: 32px;
-        font-weight: 600;
-        line-height: 1.4;
-    }
+.swiper-pagination{
+    top: auto !important;
+    bottom: 0 !important; 
+    line-height: 1;
+    position: relative;
+    margin-top: 34px;
 }
 
-.btn{
-    width: 185px;
-    height: 40px;
-    border: none;
-    font-size: 14px;
-    background-color: white;
-    letter-spacing: .2px;
-    cursor: pointer;
+.swiper-pagination-bullet {
+    background-color: #adadad ;
+    opacity: 1;
 }
+
+.swiper-pagination-bullet-active {
+    background-color: #dfdfdf;
+    transform: scale(1.5);
+}
+
+
+
+
+
+
+
 
 .navMenuItem{
     font-size: 18px;
     color: #404040;
     width: 104px;
-    text-align: center;
+    /* text-align: center; */
     border: none;
     background: none;
     cursor: pointer;
@@ -77,52 +83,6 @@ img {
     }
 }
 
-
-/* Global Styles For BestSellers Component */
-
-.bestCardsDiv{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-
-    .bestImgDiv{
-        max-width: 392px;
-        max-height: 438px;
-    }
-
-    .mainInfoDiv{
-        padding: 6px 8px;
-
-        .bestTitle{
-            font-weight: 700;
-            line-height: 1.4;
-        }
-
-        .infoDiv{
-            display: flex;
-            justify-content: space-between;
-            padding: 8px 0;
-            line-height: 1.8;
-        }
-
-        .price{
-            font-weight: 700;
-        }
-    }
-
-    .colorsDiv{
-        display: flex;
-        gap: 8px;
-    }
-
-    .color{
-        width: 24PX;
-        height: 24PX;
-        border-radius: 50%;
-        border: none;
-        cursor: pointer;
-    }
-}
 
 /* Global Styles For Footer */
 

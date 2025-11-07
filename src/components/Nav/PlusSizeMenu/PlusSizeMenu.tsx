@@ -3,11 +3,10 @@ import plus1 from '../../../assets/images/plus1.png'
 import plus2 from '../../../assets/images/plus2.png'
 import plus3 from '../../../assets/images/plus3.png'
 
-const PlusSizeMenu = ({plusOpen} : {plusOpen: boolean}) => {
+const PlusSizeMenu = ({closeMenu}: {closeMenu: () => void}) => {
     return (
-        <section className={`absolute left-0 w-[1440px] bg-primary transition-all duration-400
-                ${plusOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-4 invisible"}`}>
-            <div className="max-w-[1224px] mx-auto flex justify-between pt-[32px] pb-[58px]">
+        <section onClick={closeMenu} className={"w-[1440px] bg-primary"}>
+            <div onClick={(e) => e.stopPropagation()} className="w-[1224px] mx-auto flex justify-between pt-[32px] pb-[58px]">
                 {/* Left Columns */}
                 <div className="flex">
                     <div className="w-[184px] mr-[264px]">

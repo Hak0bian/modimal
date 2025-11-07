@@ -3,11 +3,10 @@ import full from "../../../assets/images/new1.png"
 import boluses from "../../../assets/images/new2.png"
 import dresses from "../../../assets/images/new3.png"
 
-const NewInManu = ({newOpen} : {newOpen: boolean}) => {
+const NewInManu = ({closeMenu} : {closeMenu: () => void}) => {
     return (
-        <section className={`absolute left-0 w-[1440px] bg-primary transition-all duration-400
-                ${newOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-4 invisible"}`}>
-            <div className="flex justify-center pt-[32px] pb-[58px]">
+        <section onClick={closeMenu}>
+            <div onClick={(e) => e.stopPropagation()} className="w-[1440px] bg-primary flex justify-center pt-[32px] pb-[58px]">
                 {/* Left Columns */}
                 <div className="flex">
                     <div className="w-[184px] mr-[24px]">

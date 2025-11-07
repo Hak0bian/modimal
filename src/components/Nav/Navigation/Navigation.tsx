@@ -1,59 +1,82 @@
+import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import logo from '../../../assets/images/logo.png'
-import searchLogo from '../../../assets/images/search-icon.svg'
-import profileLogo from '../../../assets/images/profile-icon.svg'
-import favoriteLogo from '../../../assets/images/favorite-icon.svg'
-import bagLogo from '../../../assets/images/bag-icon.svg'
-import { useState } from "react";
-import CollectionMenu from "../CollectionMenu/CollectionMenu";
-import NewInManu from '../NewInManu/NewInManu'
-import PlusSizeMenu from '../PlusSizeMenu/PlusSizeMenu'
-import SustainabilityMenu from '../SustainabilityMenu/SustainabilityMenu'
+import search from '../../../assets/images/search-icon.svg'
+import profile from '../../../assets/images/profile-icon.svg'
+import favorite from '../../../assets/images/favorite-icon.svg'
+import bag from '../../../assets/images/bag-icon.svg'
+import burger from '../../../assets/images/burger-icon.svg'
 
 const Navigation = () => {
-    const [collOpen, setCollOpen] = useState(false);
-    const [newOpen, setNewOpen] = useState(false);
-    const [plusOpen, setPlusOpen] = useState(false);
-    const [sustainOpen, setSustainOpen] = useState(false);
+    const [activeMenu, setActiveMenu] = useState<string | null>(null);
+    const closeMenu = () => setActiveMenu(null);
+    const toggleMenu = (menu: string) => {
+        setActiveMenu(prev => (prev === menu ? null : menu));
+    };
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-10 bg-primary flex justify-center">
-            <div className='max-w-[1440px] w-full '>
-                {/* Top Bar */}
-                <div className="bg-bg_green text-center leading-[30px] text-primary text-[12px] font-[600] tracking-[0.8px]">
-                    <p>Enjoy Free Shipping On All Orders</p>
-                </div>
+        <>
+            <nav className="sticky top-0 w-full left-0 right-0 z-10 bg-primary">
+                <div>
+                    {/* Top Bar */}
+                    <div className="bg-bg_green text-center text-primary text-[10px] font-normal tracking-[0.8px] leading-4
+                        xl:text-[12px] xl:font-semibold xl:leading-[30px]">
+                        <p>Enjoy Free Shipping On All Orders</p>
+                    </div>    
+                    
+                    <div className='flex gap-[35px] justify-between items-center px-5 py-1 xl:px-[108px] xl:py-4'>
+                        {/* Burger & Search */}
+                        <div className='flex gap-2 items-center w-[58px] md:w-[184px] xl:hidden'>      
+                            <button className="cursor-pointer">
+                                <img src={burger} alt="burger menu"/>
+                            </button>
+                            <button className="cursor-pointer">
+                                <img src={search} alt="search" className='md:hidden'/>
+                            </button>
+                        </div>
 
-                <div className="flex justify-between items-center px-[108px]">
-                    {/* Logo */}
-                    <div className="max-w-[184px] text-center py-[22px] px-[14px]">
-                        <img src={logo} alt="logo" className="max-w-[156px]" />
-                        <p className="text-secordary text-[10px]">women clothing</p>
+                        {/* Logo */}
+                        <NavLink to='/'>
+                            <div className="text-center px-2.5 py-1.5 lg:px-3.5">
+                                <img src={logo} alt="logo" className="w-[116px] md:w-[140px] lg:w-[184px]"/>
+                                <p className="text-secordary text-[8px] mt-1.5 xl:text-[10px] xl:mt-2">women clothing</p>
+                            </div>
+                        </NavLink>
+
+                        {/* Menu */}
+                        <div className="hidden xl:flex gap-6">
+                            <button className="navMenuItem" onClick={() => toggleMenu("collection")}>Collection</button>
+                            <button className="navMenuItem" onClick={() => toggleMenu("newin")}>New In</button>
+                            <button className="navMenuItem">ModiWeek</button>
+                            <button className="navMenuItem" onClick={() => toggleMenu("plus")}>Plus Size</button>
+                            <button className="navMenuItem pl-1" onClick={() => toggleMenu("sustain")}>Sustainability</button>
+                        </div>
+
+                        {/* Icons */}
+                        <div className='flex gap-2 items-center w-[58px] md:w-[184px] md:gap-6 md:px-1'>
+                            <button className="cursor-pointer hidden md:flex">
+                                <img src={search} alt="search"/>
+                            </button>
+                            <button className="cursor-pointer hidden md:flex">
+                                <img src={profile} alt="profile"/>
+                            </button>
+                            <button className="cursor-pointer">
+                                <img src={favorite} alt="favorite"/>
+                            </button>
+                            <button className="cursor-pointer">
+                                <img src={bag} alt="bag"/>
+                            </button>
+                        </div>
                     </div>
-
-                    {/* Menu */}
-                    <div className="flex gap-[24px]">
-                        <button className="navMenuItem" onClick={() => setCollOpen(!collOpen)}>Collection</button>
-                        <button className="navMenuItem" onClick={() => setNewOpen(!newOpen)}>New In</button>
-                        <button className="navMenuItem">ModiWeek</button>
-                        <button className="navMenuItem" onClick={() => setPlusOpen(!plusOpen)}>Plus Size</button>
-                        <button className="navMenuItem w-[128px]" onClick={() => setSustainOpen(!sustainOpen)}>Sustainability</button>
-                    </div>
-
-                    {/* Icons */}
-                    <div className="w-[184px] flex justify-center items-center gap-[24px] p-[4px]"> 
-                        <img src={searchLogo} alt="search" className="cursor-pointer" /> 
-                        <img src={profileLogo} alt="profile" className="cursor-pointer" /> 
-                        <img src={favoriteLogo} alt="favorite" className="cursor-pointer" /> 
-                        <img src={bagLogo} alt="bag" className="cursor-pointer" /> 
-                    </div> 
                 </div>
-                <CollectionMenu collOpen={collOpen} />
-                <NewInManu newOpen={newOpen} />
-                <PlusSizeMenu plusOpen={plusOpen} />
-                <SustainabilityMenu sustainOpen={sustainOpen}/>
-            </div>
-        </nav>
-    );
-};
+            </nav>
+            
+             {/* Overlay */}
+            {activeMenu && (
+                <div onClick={closeMenu} className="w-full m-auto fixed inset-0 bg-black/50 z-5" />
+            )}
+        </>
+    )
+}
 
-export default Navigation;
+export default Navigation

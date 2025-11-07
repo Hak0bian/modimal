@@ -2,16 +2,10 @@ import { NavLink } from "react-router-dom"
 import blouses from "../../../assets/images/blouses.png"
 import plusSize from "../../../assets/images/plus-size.png"
 
-const CollectionMenu = ({collOpen} : {collOpen: boolean}) => {
+const CollectionMenu = ({closeMenu}: { closeMenu: () => void}) => {
     return (
-        <>
-            {/* <section
-                className={`fixed inset-0 bg-black transition-opacity duration-300 z-20 
-                    ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}>
-            </section> */}
-
-            <section className={`absolute left-0 w-[1440px] bg-primary transition-all duration-400
-                    ${collOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-4 invisible"}`}>
+        <section onClick={closeMenu}>
+            <div onClick={(e) => e.stopPropagation()} className="w-[1440px] mx-auto bg-primary">
                 <div className="flex justify-center pt-[32px] pb-[58px]">
                     {/* Left Columns */}
                     <div className="flex">
@@ -22,7 +16,7 @@ const CollectionMenu = ({collOpen} : {collOpen: boolean}) => {
                                 <li className="collMenuItem"><NavLink to={'/blouses&top'}>Boluses & Top</NavLink></li>
                                 <li className="collMenuItem"><NavLink to={'/pants'}>Pants</NavLink></li>
                                 <li className="collMenuItem"><NavLink to={'/dresses&jumpsuits'}>Dresses & Jumpsuits</NavLink></li>
-                                <li className="collMenuItem"><NavLink to={'/outwear&jackets '}>Outwear & Jackets </NavLink></li>
+                                <li className="collMenuItem"><NavLink to={'/outwear&jackets'}>Outwear & Jackets</NavLink></li>
                                 <li className="collMenuItem"><NavLink to={'/pullovers'}>Pullovers</NavLink></li>
                                 <li className="collMenuItem"><NavLink to={'/tees'}>Tees</NavLink></li>
                                 <li className="collMenuItem"><NavLink to={'/shorts&skirts'}>Shorts & Skirts</NavLink></li>
@@ -53,18 +47,18 @@ const CollectionMenu = ({collOpen} : {collOpen: boolean}) => {
                     {/* Right Images */}
                     <div className="flex gap-[24px]">
                         <div>
-                            <img src={blouses} alt="blouses image" className="w-[288px]"/>
+                            <img src={blouses} alt="blouses image" className="w-[288px]" />
                             <p className="leading-[1.8] mt-[12px]">Blouses</p>
                         </div>
                         <div>
-                            <img src={plusSize} alt="plus size image" className="w-[288px]"/>
+                            <img src={plusSize} alt="plus size image" className="w-[288px]" />
                             <p className="leading-[1.8] mt-[12px]">Plus Size</p>
                         </div>
                     </div>
                 </div>
-            </section>
-        </>
-    )
-}
+            </div>
+        </section>
+    );
+};
 
-export default CollectionMenu
+export default CollectionMenu;
