@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         primary: '#ffffff',
-        secordary: '#404040',
+        secondary: '#404040',
         black: '#0C0C0C',
         lightgray: '#CBCBCB',
         darkblue: '#19418E',
@@ -26,6 +26,7 @@ export default {
 
       screens: {
         xs: '480px',
+        mdx: '840px'
       },
     },
   },

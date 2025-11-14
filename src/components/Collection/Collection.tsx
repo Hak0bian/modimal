@@ -6,75 +6,39 @@ import coll4 from '../../assets/images/collection4.jpg';
 const Collection = () => {
     return (
         <section>
-            <div className='w-90 xl:w-[1224px] m-auto px-5'> 
-                <div className='mt-5 mb-2 xs:mt-15 xs:mb-4 xl:mt-22 xl:mb-6'>
-                    <h2 className='text-[20px] font-bold leading-[1.4] md:text-[24px] xl:text-[32px] xl:font-semibold'>Collection</h2>
+            <div className="w-full max-w-[1224px] mx-auto px-5 xl:px-0">
+                <div className="mt-5 mb-2 xs:mt-15 xs:mb-4 xl:mt-22 xl:mb-6">
+                    <h2 className="text-[20px] font-bold leading-[1.4] md:text-[24px] xl:text-[32px] xl:font-semibold">Collection</h2>
                 </div>
 
-                <div className='flex gap-4 md:gap-5 xl:gap-6'>
-                    <div>
-                        <div className='mb-6 xl:mb-16 xl:relative'>
-                            <div>
-                                <img src={coll1} alt="collection one" className='w-[152px] h-[165px] object-cover md:w-[370px] md:h-[340px] xl:w-150 xl:h-[518px]'/>
-                            </div>
-                            <button className='text-[14px] h-10 bg-primary right-4 bottom-4 ml-4 cursor-pointer xl:absolute xl:w-[185px]'>Boluses</button>
+                <div className="flex justify-between gap-4 md:gap-5 xl:gap-6">
+                    {/* Left column */}
+                    <div className="flex flex-col justify-between gap-6 flex-1 lg:gap-10 xl:gap-16">
+                        <div className="sm:relative">
+                            <img src={coll1} alt="collection one" className="object-cover w-full h-[165px] xs:h-60 md:h-[360px] xl:h-[518px]" />
+                            <button className="w-22 text-[14px] h-10 bg-primary cursor-pointer md:w-[185px] sm:absolute sm:right-4 sm:bottom-4">Boluses</button>
                         </div>
-                        <div className='xl:relative'>
-                            <div>
-                                <img src={coll2} alt="collection one" className='w-[152px] h-[254px] object-cover md:w-[370px] md:h-[540px] xl:w-150 xl:h-[838px]'/>
-                            </div>
-                            <button className='text-[14px] h-10 bg-primary right-4 bottom-4 ml-4 cursor-pointer xl:absolute xl:w-[185px]'>Dresses</button>
+
+                        <div className="sm:relative">
+                            <img src={coll2} alt="collection two" className="object-cover w-full h-[254px] xs:h-[360px] md:h-[540px] xl:h-[840px]" />
+                            <button className="w-22 text-[14px] h-10 bg-primary cursor-pointer md:w-[185px] sm:absolute sm:right-4 sm:bottom-4">Dresses</button>
                         </div>
                     </div>
 
-                    <div>
-                        <div className='mb-8 xl:mb-36 xl:relative'>
-                            <div>
-                                <img src={coll3} alt="collection one" className='w-[152px] h-[276px] object-cover md:w-[370px] md:h-[540px] xl:w-150 xl:h-[840px]'/>
-                            </div>
-                            <button className='text-[14px] h-10 bg-primary right-4 bottom-4 ml-4 cursor-pointer xl:absolute xl:w-[185px]'>Pants</button>
+                    {/* Right column */}
+                    <div className="flex flex-col justify-between gap-8 sm:gap-4 flex-1 lg:gap-10 xl:gap-36">
+                        <div className="sm:relative">
+                            <img src={coll3} alt="collection three" className="object-cover w-full h-[276px] xs:h-[360px] md:h-[540px] xl:h-[840px]" />
+                            <button className="w-22 text-[14px] h-10 bg-primary cursor-pointer md:w-[185px] sm:absolute sm:left-4 sm:bottom-4">Pants</button>
                         </div>
-                        <div className='xl:relative'>
-                            <div>
-                                <img src={coll4} alt="collection one" className='w-[152px] h-[135px] object-cover md:w-[370px] md:h-[332px] xl:w-150 xl:h-[436px]'/>
-                            </div>
-                            <button className='text-[14px] h-10 bg-primary right-4 bottom-4 ml-4 cursor-pointer xl:absolute xl:w-[185px]'>Outwears</button>
+
+                        <div className="sm:relative">
+                            <img src={coll4} alt="collection four" className="object-cover w-full h-[135px] xs:h-60 md:h-80 xl:h-[436px]" />
+                            <button className="w-22 text-[14px] h-10 bg-primary cursor-pointer md:w-[185px] sm:absolute sm:right-4 sm:bottom-4">Outwears</button>
                         </div>
                     </div>
                 </div>
             </div>
-
-            {/* <div className='flex gap-4 md:gap-5 xl:gap-6'>
-                    <div>
-                        <div className='mb-6 xl:mb-16 xl:relative'>
-                            <div>
-                                <img src={coll1} alt="collection one" className='min-w-[152px] min-h-[165px] object-cover md:w-[370px] md:h-[340px] xl:w-150 xl:h-[518px]'/>
-                            </div>
-                            <button className='text-[14px] h-10 bg-primary right-4 bottom-4 ml-4 cursor-pointer xl:absolute xl:w-[185px]'>Boluses</button>
-                        </div>
-                        <div className='xl:relative'>
-                            <div>
-                                <img src={coll2} alt="collection one" className='w-[152px] h-[254px] object-cover md:w-[370px] md:h-[540px] xl:w-150 xl:h-[838px]'/>
-                            </div>
-                            <button className='text-[14px] h-10 bg-primary right-4 bottom-4 ml-4 cursor-pointer xl:absolute xl:w-[185px]'>Dresses</button>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div className='mb-8 xl:mb-36 xl:relative'>
-                            <div>
-                                <img src={coll3} alt="collection one" className='w-[152px] h-[276px] object-cover md:w-[370px] md:h-[540px] xl:w-150 xl:h-[840px]'/>
-                            </div>
-                            <button className='text-[14px] h-10 bg-primary right-4 bottom-4 ml-4 cursor-pointer xl:absolute xl:w-[185px]'>Pants</button>
-                        </div>
-                        <div className='xl:relative'>
-                            <div>
-                                <img src={coll4} alt="collection one" className='w-[152px] h-[135px] object-cover md:w-[370px] md:h-[332px] xl:w-150 xl:h-[436px]'/>
-                            </div>
-                            <button className='text-[14px] h-10 bg-primary right-4 bottom-4 ml-4 cursor-pointer xl:absolute xl:w-[185px]'>Outwears</button>
-                        </div>
-                    </div>
-                </div> */}
         </section>
     )
 }

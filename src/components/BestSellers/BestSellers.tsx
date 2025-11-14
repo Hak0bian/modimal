@@ -32,7 +32,7 @@ const BestSellers = () => {
                     slidesPerGroup={1}
                     spaceBetween={16}
                     breakpoints={{
-                        480: {slidesPerView: 3},
+                        640: {slidesPerView: 3},
                         1024: {spaceBetween: 24}
                     }}
                 >

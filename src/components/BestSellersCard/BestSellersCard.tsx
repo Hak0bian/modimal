@@ -3,8 +3,8 @@ import type { ICardInfoPropsType } from '../propsTypes'
 
 const BestSellersCard = ({cardInfo} : ICardInfoPropsType) => {
     return (
-        <div className="flex flex-col releative">
-            <div className="min-w-[152px] min-h-[214px] bg-cover aspect-3/4 xl:h-[438px] xl:bg-center
+        <div className="releative">
+            <div className="min-w-[152px] min-h-[214px] bg-cover aspect-3/4 xl:w-[392px] xl:h-[438px] xl:bg-center
                 [@media(min-width:768px)]:bg-[url('/img2.png')]" style={{backgroundImage: `url(${window.innerWidth <= 1024 ? cardInfo.bigImg : cardInfo.smallImg})`}}>
             </div>
 

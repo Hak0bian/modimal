@@ -40,7 +40,6 @@ img {
     max-width: 100%;
 }
 
-
 /* Custom Styles */
 
 .swiper-pagination{
@@ -59,54 +58,4 @@ img {
 .swiper-pagination-bullet-active {
     background-color: #dfdfdf;
     transform: scale(1.5);
-}
-
-
-
-
-
-
-
-
-.navMenuItem{
-    font-size: 18px;
-    color: #404040;
-    width: 104px;
-    /* text-align: center; */
-    border: none;
-    background: none;
-    cursor: pointer;
-    transition: .3s linear;
-
-    &:hover{
-        color: #748C70;
-    }
-}
-
-
-/* Global Styles For Footer */
-
-.footerRight{
-    h3{
-        font-weight: 700;
-        line-height: 1.4;
-        padding-bottom: 24px;
-    }
-
-    li{
-        font-size: 18px;
-        line-height: 1.7;
-        margin-bottom: 8px;
-        font-weight: 300;
-        cursor: pointer;
-    }
-}
-
-
-
-.collMenuItem{
-    font-size: 18px;
-    line-height: 1.8;
-    color: #404040;
-    margin: 4px 0;
 }

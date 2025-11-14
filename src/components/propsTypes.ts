@@ -12,3 +12,8 @@ export interface ICardInfoType {
 export interface ICardInfoPropsType {
     cardInfo: ICardInfoType;
 }
+
+export interface IAccordionPropsType {
+    expanded: boolean;
+    onChange: (event: React.SyntheticEvent, isExpanded: boolean) => void;
+}
