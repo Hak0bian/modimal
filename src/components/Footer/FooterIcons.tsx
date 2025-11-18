@@ -1,8 +1,8 @@
-import instaLogo from '../../src/assets/images/insta-icon.svg'
-import fbLogo from '../../src/assets/images/fb-icon.svg'
-import pintLogo from '../../src/assets/images/pint-icon.svg'
-import tiktokLogo from '../../src/assets/images/tiktok-icon.svg'
-import rightsLogo from '../../src/assets/images/original.svg'
+import instaLogo from '../../assets/images/insta-icon.svg'
+import fbLogo from '../../assets/images/fb-icon.svg'
+import pintLogo from '../../assets/images/pint-icon.svg'
+import tiktokLogo from '../../assets/images/tiktok-icon.svg'
+import rightsLogo from '../../assets/images/original.svg'
 
 const FooterIcons = () => {
     return (

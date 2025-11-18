@@ -11,7 +11,8 @@ const BurgerMenu = ({ burgerIsOpen }: { burgerIsOpen: boolean }) => {
 
     return (
         <section className={`fixed left-0 w-screen h-screen overflow-y-auto px-5 py-14 bg-primary z-8 lg:hidden
-            transform transition-transform duration-300 ease-in-out ${burgerIsOpen ? "translate-x-0" : "-translate-x-full"}`}>
+            transform transition-transform duration-300 ease-in-out ${burgerIsOpen ? "translate-x-0" : "-translate-x-full"}`}
+        >
             <div>
                 <CollectionMenu expanded={expanded === 'collection'} onChange={() => setExpanded(expanded === 'collection' ? false : 'collection')}/>
                 <NewInManu expanded={expanded === 'newin'} onChange={() => setExpanded(expanded === 'newin' ? false : 'newin')}/>

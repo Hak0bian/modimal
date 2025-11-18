@@ -1,5 +1,7 @@
 export interface INavContentPropsType {
     toggleMenu: (menu: string) => void;
+    searchIsOpen: boolean;
+    setSearchIsOpen: (state: boolean) => void;
     burgerIsOpen: boolean;
     setBurgerIsOpen: (state: boolean) => void;
 }

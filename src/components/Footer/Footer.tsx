@@ -1,4 +1,4 @@
-import chatIcon from '../../src/assets/images/chat-icon.svg'
+import chatIcon from '../../assets/images/chat-icon.svg'
 import FootMainContent from './FootMainContent'
 import FooterIcons from './FooterIcons'
 

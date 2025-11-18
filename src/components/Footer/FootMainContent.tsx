@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
-import { classes } from '../utils/tailwindClasses'
-import vector from '../../src/assets/images/Vector.svg'
+import { classes } from '../../utils/tailwindClasses'
+import vector from '../../assets/images/Vector.svg'
 
 const FootMainContent = () => {
     return (

@@ -10,7 +10,7 @@ import burger from '../../../assets/images/burger-icon.svg'
 import close from '../../../assets/images/close-icon.svg'
 
 
-const NavMainContent = ({toggleMenu, burgerIsOpen, setBurgerIsOpen} : INavContentPropsType ) => {
+const NavMainContent = ({toggleMenu, searchIsOpen, setSearchIsOpen, burgerIsOpen, setBurgerIsOpen} : INavContentPropsType ) => {
     const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
     return (
@@ -25,10 +25,10 @@ const NavMainContent = ({toggleMenu, burgerIsOpen, setBurgerIsOpen} : INavConten
                 {/* Burger & Search */}
                 <div className='flex gap-2 items-center w-[58px] md:w-[184px] lg:hidden'>
                     <button className="cursor-pointer w-[18px]" onClick={() => setBurgerIsOpen(!burgerIsOpen)}>
-                        {burgerIsOpen ? <img src={close} alt="burger icon" /> : <img src={burger} alt="burger icon" />}
+                        {burgerIsOpen ? <img src={close} alt="burger icon"/> : <img src={burger} alt="burger icon"/>}
                     </button>
-                    <button className="cursor-pointer">
-                        <img src={search} alt="search" className='md:hidden' />
+                    <button className="cursor-pointer md:hidden" onClick={() => setSearchIsOpen(!searchIsOpen)}>
+                        {searchIsOpen ? <img src={close} alt="burger icon" className='ml-1'/> : <img src={search} alt="search"/>}
                     </button>
                 </div>
 
@@ -51,8 +51,8 @@ const NavMainContent = ({toggleMenu, burgerIsOpen, setBurgerIsOpen} : INavConten
 
                 {/* Icons */}
                 <div className='flex gap-2 items-center w-[58px] md:w-[184px] md:gap-6 md:px-1'>
-                    <button className="cursor-pointer hidden md:flex">
-                        <img src={search} alt="search" />
+                    <button className="cursor-pointer hidden md:flex" onClick={() => setSearchIsOpen(!searchIsOpen)}>
+                        {searchIsOpen ? <img src={close} alt="burger icon"/> : <img src={search} alt="search"/>}
                     </button>
                     <button className="cursor-pointer hidden md:flex">
                         <img src={profile} alt="profile" />

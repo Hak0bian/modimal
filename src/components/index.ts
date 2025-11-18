@@ -5,14 +5,15 @@ import Collection from "./Collection/Collection";
 import ModiweekSlider from "./ModiweekSlider/ModiweekSlider";
 import Sustainability from "./Sustainability/Sustainability";
 import FollowUs from "./FollowUs/FollowUs";
-import Footer from "../Footer/Footer";
+import Footer from "./Footer/Footer";
 
 import BurgerMenu from "./Navigation/BurgerMenuDetails/BurgerMenu/BurgerMenu";
 import CollectionDropDown from "./Navigation/DropDownDetails/CollectionDropDown/CollectionDropDown";
 import NewInDropDown from "./Navigation/DropDownDetails/NewInDropDown/NewInDropDown";
 import PlusSizeDropDown from "./Navigation/DropDownDetails/PlusSizeDropDown/PlusSizeDropDown";
 import SustainDropDown from "./Navigation/DropDownDetails/SustainDropDown/SustainDropDown";
+import Search from "./Search/Search";
 
 export { Header, BestSellers, BestSellersCard, Collection, ModiweekSlider, Sustainability, FollowUs, Footer,
-    BurgerMenu, CollectionDropDown, NewInDropDown, PlusSizeDropDown, SustainDropDown, 
+    BurgerMenu, CollectionDropDown, NewInDropDown, PlusSizeDropDown, SustainDropDown, Search,
 }
