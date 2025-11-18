@@ -1,3 +1,9 @@
+export interface INavContentPropsType {
+    toggleMenu: (menu: string) => void;
+    burgerIsOpen: boolean;
+    setBurgerIsOpen: (state: boolean) => void;
+}
+
 export interface ICardInfoType {
     title: string;
     about: string;
@@ -7,6 +13,7 @@ export interface ICardInfoType {
     color1: string;
     color2: string;
     color3: string;
+    link: string
 }
 
 export interface ICardInfoPropsType {

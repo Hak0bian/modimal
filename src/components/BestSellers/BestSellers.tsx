@@ -12,11 +12,20 @@ import BestSellersCard from '../BestSellersCard/BestSellersCard';
 
 const BestSellers = () => {
     const bestObj = [
-        { title: "Tailored stretch", about: "Turn It Up Pants", price: "$180", smallImg: bestSmallOne, bigImg: bestOne, color1: '#0C0C0C', color2: '#7DC3EB', color3: '#748C70' },
-        { title: "Technical Silk", about: "Make A Splash", price: "$120", smallImg: bestSmallTwo, bigImg: bestTwo, color1: '#909225', color2: '#19418E', color3: '#0C0C0C' },
-        { title: "Cool Weave", about: "Anywhere Dress", price: "$210", smallImg: bestThree, bigImg: bestThree, color1: '#D0A5EA', color2: '#909225', color3: '#748C70' },
+        {
+            title: "Tailored stretch", about: "Turn It Up Pants", price: "$180", smallImg: bestSmallOne, bigImg: bestOne,
+            color1: '#0C0C0C', color2: '#7DC3EB', color3: '#748C70', link: "tailored-stretch"
+        },
+        {
+            title: "Technical Silk", about: "Make A Splash", price: "$120", smallImg: bestSmallTwo, bigImg: bestTwo,
+            color1: '#909225', color2: '#19418E', color3: '#0C0C0C', link: "technical-silk"
+        },
+        {
+            title: "Cool Weave", about: "Anywhere Dress", price: "$210", smallImg: bestThree, bigImg: bestThree,
+            color1: '#D0A5EA', color2: '#909225', color3: '#748C70', link: "cool-weave"
+        },
     ]
-    
+
     return (
         <section>
             <div className='xl:w-[1224px] px-5 m-auto xl:px-0'>
@@ -32,8 +41,8 @@ const BestSellers = () => {
                     slidesPerGroup={1}
                     spaceBetween={16}
                     breakpoints={{
-                        640: {slidesPerView: 3},
-                        1024: {spaceBetween: 24}
+                        640: { slidesPerView: 3, spaceBetween: 16 },
+                        1024: { slidesPerView: 3, spaceBetween: 24 },
                     }}
                 >
 

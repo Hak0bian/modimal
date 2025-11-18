@@ -32,7 +32,7 @@ const ModiweekSlider = () => {
                     slidesPerGroup={1}
                     spaceBetween={16}
                     loop={true}
-                    // autoplay={{ delay: 1500, disableOnInteraction: false }}
+                    autoplay={{ delay: 1500, disableOnInteraction: false }}
                     breakpoints={{
                             640: {slidesPerView: 3},
                             1024: {slidesPerView: 4, spaceBetween: 24, pagination: false}, 

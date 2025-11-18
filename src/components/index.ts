@@ -5,13 +5,13 @@ import Collection from "./Collection/Collection";
 import ModiweekSlider from "./ModiweekSlider/ModiweekSlider";
 import Sustainability from "./Sustainability/Sustainability";
 import FollowUs from "./FollowUs/FollowUs";
-import Footer from "./Footer/Footer";
+import Footer from "../Footer/Footer";
 
-import BurgerMenu from "./Nav/BurgerMenuDetails/BurgerMenu/BurgerMenu";
-import CollectionDropDown from "./Nav/DropDownDetails/CollectionDropDown/CollectionDropDown";
-import NewInDropDown from "./Nav/DropDownDetails/NewInDropDown/NewInDropDown";
-import PlusSizeDropDown from "./Nav/DropDownDetails/PlusSizeDropDown/PlusSizeDropDown";
-import SustainDropDown from "./Nav/DropDownDetails/SustainDropDown/SustainDropDown";
+import BurgerMenu from "./Navigation/BurgerMenuDetails/BurgerMenu/BurgerMenu";
+import CollectionDropDown from "./Navigation/DropDownDetails/CollectionDropDown/CollectionDropDown";
+import NewInDropDown from "./Navigation/DropDownDetails/NewInDropDown/NewInDropDown";
+import PlusSizeDropDown from "./Navigation/DropDownDetails/PlusSizeDropDown/PlusSizeDropDown";
+import SustainDropDown from "./Navigation/DropDownDetails/SustainDropDown/SustainDropDown";
 
 export { Header, BestSellers, BestSellersCard, Collection, ModiweekSlider, Sustainability, FollowUs, Footer,
     BurgerMenu, CollectionDropDown, NewInDropDown, PlusSizeDropDown, SustainDropDown, 

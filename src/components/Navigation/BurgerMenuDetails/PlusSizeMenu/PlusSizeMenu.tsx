@@ -1,3 +1,6 @@
+import { NavLink } from 'react-router-dom';
+import { classes } from '../../../../utils/tailwindClasses';
+import type { IAccordionPropsType } from '../../../propsTypes';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -6,8 +9,6 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import plus1 from '../../../../assets/images/plus1.png'
 import plus2 from '../../../../assets/images/plus2.png'
 import plus3 from '../../../../assets/images/plus3.png'
-import type { IAccordionPropsType } from '../../../propsTypes';
-import { NavLink } from 'react-router-dom';
 
 
 const PlusSizeMenu = ({ expanded, onChange }: IAccordionPropsType) => {
@@ -24,31 +25,31 @@ const PlusSizeMenu = ({ expanded, onChange }: IAccordionPropsType) => {
                 <AccordionDetails>
                     <div className="xs:flex justify-around gap-10">
                         <div className='pb-6'>
-                            <h3 className='text-[14px] font-semibold pb-4 pl-4 xs:pl-0'>Category</h3>
-                            <ul className="flex flex-col gap-4 text-nowrap">
-                                <li className='text-[14px] leading-[1.8] pt-[7px] pl-9 xs:pl-0'><NavLink to={'/shop-all'}>Shop All</NavLink></li>
-                                <li className='text-[14px] leading-[1.8] pt-[7px] pl-9 xs:pl-0'><NavLink to={'/blouses&top'}>Boluses & Top</NavLink></li>
-                                <li className='text-[14px] leading-[1.8] pt-[7px] pl-9 xs:pl-0'><NavLink to={'/tees'}>Tees</NavLink></li>
-                                <li className='text-[14px] leading-[1.8] pt-[7px] pl-9 xs:pl-0'><NavLink to={'/pants'}>Pants</NavLink></li>
-                                <li className='text-[14px] leading-[1.8] pt-[7px] pl-9 xs:pl-0'><NavLink to={'/outwear&jackets '}>Outwear & Jackets </NavLink></li>
-                                <li className='text-[14px] leading-[1.8] pt-[7px] pl-9 xs:pl-0'><NavLink to={'/pullovers'}>Pullovers</NavLink></li>
-                                <li className='text-[14px] leading-[1.8] pt-[7px] pl-9 xs:pl-0'><NavLink to={'/dresses&jumpsuits'}>Dresses & Jumpsuits</NavLink></li>
-                                <li className='text-[14px] leading-[1.8] pt-[7px] pl-9 xs:pl-0'><NavLink to={'/shorts&skirts'}>Shorts & Skirts</NavLink></li>
+                            <h3 className={classes.burgerMenuTitle}>Category</h3>
+                            <ul className={classes.burgerMenuList}>
+                                <li className={classes.burgerMenuItem}><NavLink to={'/shop-all'}>Shop All</NavLink></li>
+                                <li className={classes.burgerMenuItem}><NavLink to={'/blouses&top'}>Boluses & Top</NavLink></li>
+                                <li className={classes.burgerMenuItem}><NavLink to={'/tees'}>Tees</NavLink></li>
+                                <li className={classes.burgerMenuItem}><NavLink to={'/pants'}>Pants</NavLink></li>
+                                <li className={classes.burgerMenuItem}><NavLink to={'/outwear&jackets '}>Outwear & Jackets </NavLink></li>
+                                <li className={classes.burgerMenuItem}><NavLink to={'/pullovers'}>Pullovers</NavLink></li>
+                                <li className={classes.burgerMenuItem}><NavLink to={'/dresses&jumpsuits'}>Dresses & Jumpsuits</NavLink></li>
+                                <li className={classes.burgerMenuItem}><NavLink to={'/shorts&skirts'}>Shorts & Skirts</NavLink></li>
                             </ul>
                         </div>
 
                         <div className="gap-5 hidden xs:flex">
                             <div>
                                 <img src={plus1} alt="blouses image" className="w-45" />
-                                <p className="text-[14px] leading-[1.8] mt-3">Pants</p>
+                                <p className={classes.burgerMenuImgName}>Pants</p>
                             </div>
                             <div className='hidden sm:block'>
                                 <img src={plus2} alt="plus size image" className="w-45" />
-                                <p className="text-[14px] leading-[1.8] mt-3">Dresses</p>
+                                <p className={classes.burgerMenuImgName}>Dresses</p>
                             </div>
                             <div className='hidden mdx:block'>
                                 <img src={plus3} alt="plus size image" className="w-45" />
-                                <p className="text-[14px] leading-[1.8] mt-3">Blouses</p>
+                                <p className={classes.burgerMenuImgName}>Blouses</p>
                             </div>
                         </div>
                     </div>
