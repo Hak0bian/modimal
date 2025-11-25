@@ -1,5 +1,6 @@
 
 export const classes = {
+    navTopBar: "bg-bg_green text-center text-primary text-[10px] font-normal tracking-[0.8px] leading-4 xl:text-[12px] xl:font-semibold xl:leading-[30px]",
     menuBtn: "text-[16px] text-secondary cursor-pointer xl:text-[18px] transition-all duration-300 hover:text-green",
     collectionBtn: "w-22 text-[14px] h-10 bg-primary cursor-pointer md:w-[185px] sm:absolute sm:right-4 sm:bottom-4",
     collorBtn: "w-4 h-4 rounded-full mt-5 cursor-pointer sm:mt-3 md:w-5 md:h-5 xl:w-6 xl:h-6",
@@ -19,4 +20,11 @@ export const classes = {
     footerMenuTitle: "text-[14px] font-semibold leading-loose lg:text-[16px] xl:text-[20px] xl:font-bold",
     footerMenuList: "text-[14px] flex flex-col gap-1 leading-[1.8] md:text-[13px] lg:text-[16px] xl:text-[18px]",
     footerMenuItem: "transition-all duration-300 hover:text-lightgray",
+
+    registerInput: "w-full h-8 border border-[#606060] outline-none mb-0.5 px-4 placeholder:text-[12px] text-[12px] xs:h-10 lg:w-[392px]",
+    errorMessage: "text-red-600 text-[11px]",
+    formsBtn: "w-full h-8 bg-bg_green text-primary mt-2 mb-4 xs:h-10 lg:w-[392px] cursor-pointer hover:bg-green duration-300",
+    formsTitle: "text-[16px] font-bold text-center mb-8 xs:text-[24px] lg:text-[32px] lg:font-semibold sm:hidden",
+    formsFlexDiv: "sm:flex gap-5 md:gap-10 lg:gap-20 xl:gap-32 sm:items-center",
+    modalBtn: "w-[164px] h-10 text-primary text-[14px] bg-bg_green hover:bg-green duration-300 cursor-pointer sm:w-[200px] lg:w-[390px] lg:text-[16px]"
 };

@@ -2,14 +2,14 @@ import { Header, BestSellers, Collection, Sustainability, FollowUs, ModiweekSlid
 
 const HomePage = () => {
     return (
-        <section>
+        <>
             <Header />
             <BestSellers />
             <Collection />
             <ModiweekSlider />
             <Sustainability />
             <FollowUs />
-        </section>
+        </>
     )
 }
 

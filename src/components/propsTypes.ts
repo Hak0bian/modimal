@@ -26,3 +26,8 @@ export interface IAccordionPropsType {
     expanded: boolean;
     onChange: (event: React.SyntheticEvent, isExpanded: boolean) => void;
 }
+
+export interface IModalsPropsType {
+    open: boolean, 
+    setOpenModal: (state: boolean) => void
+}

@@ -16,8 +16,7 @@ const NavMainContent = ({toggleMenu, searchIsOpen, setSearchIsOpen, burgerIsOpen
     return (
         <div>
             {/* Top Bar */}
-            <div className="bg-bg_green text-center text-primary text-[10px] font-normal tracking-[0.8px] leading-4
-                        xl:text-[12px] xl:font-semibold xl:leading-[30px]">
+            <div className={classes.navTopBar}>
                 <p>Enjoy Free Shipping On All Orders</p>
             </div>
 
@@ -34,7 +33,7 @@ const NavMainContent = ({toggleMenu, searchIsOpen, setSearchIsOpen, burgerIsOpen
 
                 {/* Logo */}
                 <NavLink to='/' onClick={scrollToTop}>
-                    <div className="flex flex-col justify-center items-center h-10 mt-2 mb-1 lg:h-[46px] xl:mt-4 xl:mb-[18px]">
+                    <div className="flex flex-col justify-center items-center h-10 mt-2 mb-1 mx-3.5 lg:h-[46px] xl:mt-4 xl:mb-[18px]">
                         <img src={logo} alt="logo" className="w-[116px] md:w-[140px] xl:w-[156px]" />
                         <p className="text-secondary text-[8px] mt-1.5 xl:text-[10px] xl:mt-2">women clothing</p>
                     </div>
@@ -55,7 +54,7 @@ const NavMainContent = ({toggleMenu, searchIsOpen, setSearchIsOpen, burgerIsOpen
                         {searchIsOpen ? <img src={close} alt="burger icon"/> : <img src={search} alt="search"/>}
                     </button>
                     <button className="cursor-pointer hidden md:flex">
-                        <img src={profile} alt="profile" />
+                        <NavLink to='/register'><img src={profile} alt="profile"/></NavLink>
                     </button>
                     <button className="cursor-pointer">
                         <img src={favorite} alt="favorite" />

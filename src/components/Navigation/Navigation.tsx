@@ -1,8 +1,10 @@
 import { BurgerMenu, CollectionDropDown, NewInDropDown, PlusSizeDropDown, Search, SustainDropDown } from '../index'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom';
 import NavMainContent from './NavMainContent/NavMainContent';
 
 const Navigation = () => {
+    const location = useLocation();
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
     const [isVisible, setIsVisible] = useState(false);
     const [searchIsOpen, setSearchIsOpen] = useState(false)
@@ -19,12 +21,19 @@ const Navigation = () => {
         }
     };
 
+    useEffect(() => {
+        setActiveMenu(null);
+        setIsVisible(false);
+        setBurgerIsOpen(false);
+        setSearchIsOpen(false);
+    }, [location.pathname]);
+
     return (
         <>
             <nav className="sticky top-0 left-0 right-0 z-10 bg-primary">
-                <NavMainContent 
-                    toggleMenu={toggleMenu} 
-                    searchIsOpen={searchIsOpen} 
+                <NavMainContent
+                    toggleMenu={toggleMenu}
+                    searchIsOpen={searchIsOpen}
                     setSearchIsOpen={setSearchIsOpen}
                     burgerIsOpen={burgerIsOpen}
                     setBurgerIsOpen={setBurgerIsOpen}
@@ -32,7 +41,7 @@ const Navigation = () => {
             </nav>
             <BurgerMenu burgerIsOpen={burgerIsOpen} />
             <Search searchIsOpen={searchIsOpen} />
-            
+
             {/* Overlay */}
             {activeMenu && (
                 <div onClick={closeMenu} className="w-full m-auto fixed inset-0 bg-black/50 z-5 hidden lg:block" />

@@ -2,7 +2,7 @@ import { classes } from "../../utils/tailwindClasses";
 
 const FollowUs = () => {
     return (
-        <section className="max-w-[1224px] mx-auto px-5 xl:px-0">
+        <section className="max-w-[1224px] mx-auto px-5 mb-12 xl:px-0">
             <div className="mt-6 mb-2 xs:mt-15 xs:mb-4 xl:mt-22 xl:mb-6">
                 <h2 className="text-[20px] font-bold leading-[1.4] md:text-[24px] xl:text-[32px] xl:font-semibold">Follow Us @Modimal</h2>
             </div>
