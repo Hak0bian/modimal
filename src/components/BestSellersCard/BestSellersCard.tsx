@@ -29,6 +29,6 @@ const BestSellersCard = ({cardInfo} : ICardInfoPropsType) => {
             </div>
         </NavLink>
     )
-}
+} 
 
 export default BestSellersCard

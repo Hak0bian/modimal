@@ -31,3 +31,9 @@ export interface IModalsPropsType {
     open: boolean, 
     setOpenModal: (state: boolean) => void
 }
+
+
+export interface IFilterPropsType {
+    openFilter: boolean,
+    setOpenFilter: (stete: boolean) => void
+}

@@ -20,7 +20,7 @@ const CollectionMenu = ({ expanded, onChange }: IAccordionPropsType) => {
                     <Typography sx={{ fontSize: "16px", margin: 0 }}>Collection</Typography>
                     { expanded && <div className="absolute bottom-5 left-0 right-0 border-b"></div> }
                 </AccordionSummary>
-                <AccordionDetails className="border-">
+                <AccordionDetails>
                     <div className="mdx:flex justify-around gap-4">
                         <div className="grid gap-x-10 xs:grid-cols-2 sm:grid-cols-3">
                             <div className="pb-6">
