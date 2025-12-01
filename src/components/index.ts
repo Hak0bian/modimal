@@ -14,8 +14,8 @@ import PlusSizeDropDown from "./Navigation/DropDownDetails/PlusSizeDropDown/Plus
 import SustainDropDown from "./Navigation/DropDownDetails/SustainDropDown/SustainDropDown";
 import Search from "./Search/Search";
 import ProductCard from "./ProductCard/ProductCard";
-import Filter from "./Filter/Filter";
+import Filters from "./Filters/Filters";
 
 export { Header, BestSellers, BestSellersCard, Collection, ModiweekSlider, Sustainability, FollowUs, Footer,
-    BurgerMenu, CollectionDropDown, NewInDropDown, PlusSizeDropDown, SustainDropDown, Search, ProductCard, Filter
+    BurgerMenu, CollectionDropDown, NewInDropDown, PlusSizeDropDown, SustainDropDown, Search, ProductCard, Filters
 }
