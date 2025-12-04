@@ -4,13 +4,15 @@ export interface INavContentPropsType {
     setSearchIsOpen: (state: boolean) => void;
     burgerIsOpen: boolean;
     setBurgerIsOpen: (state: boolean) => void;
+    bagIsOpen: boolean
+    setBagIsOpen: (state: boolean) => void;
 }
 
 export interface ICardInfoType {
     title: string;
     about: string;
     price: string;
-    smallImg: string, 
+    smallImg: string,
     bigImg: string,
     color1: string;
     color2: string;
@@ -28,11 +30,16 @@ export interface IAccordionPropsType {
 }
 
 export interface IModalsPropsType {
-    open: boolean, 
+    open: boolean,
     setOpenModal: (state: boolean) => void
 }
 
 export interface IFilterByPropsType {
     name: string;
-    filters: string[];
+    filters: {
+        label: string;
+        value: string;
+        color?: string;
+        border?: boolean
+    }[];
 }

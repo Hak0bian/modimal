@@ -10,13 +10,18 @@ export interface IProductsType {
     type: string,
     stock: number,
     brand: string,
+    image: string,
+    rating: number
     size: [
         string,
         string,
         string
     ],
-    image: string,
-    rating: number
+    colors: [
+        string,
+        string,
+        string
+    ]
 }
 
 export interface IProductsStateType {

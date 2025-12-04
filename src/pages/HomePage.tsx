@@ -1,4 +1,4 @@
-import { Header, BestSellers, Collection, Sustainability, FollowUs, ModiweekSlider } from "../../components"
+import { Header, BestSellers, Collection, Sustainability, FollowUs, ModiweekSlider } from "../components"
 
 const HomePage = () => {
     return (

@@ -1,30 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-import bestSmallOne from '../../assets/images/best1-small.png';
-import bestSmallTwo from '../../assets/images/best2-small.png';
-import bestOne from '../../assets/images/best1.png';
-import bestTwo from '../../assets/images/best2.png';
-import bestThree from '../../assets/images/best3.png';
-import BestSellersCard from '../BestSellersCard/BestSellersCard';
+import { useAppSelector } from '../../store/hooks';
+import ProductCard from '../Product/ProductCard';
 
 
 const BestSellers = () => {
-    const bestObj = [
-        {
-            title: "Tailored stretch", about: "Turn It Up Pants", price: "$180", smallImg: bestSmallOne, bigImg: bestOne,
-            color1: '#0C0C0C', color2: '#7DC3EB', color3: '#748C70', link: "tailored-stretch"
-        },
-        {
-            title: "Technical Silk", about: "Make A Splash", price: "$120", smallImg: bestSmallTwo, bigImg: bestTwo,
-            color1: '#909225', color2: '#19418E', color3: '#0C0C0C', link: "technical-silk"
-        },
-        {
-            title: "Cool Weave", about: "Anywhere Dress", price: "$210", smallImg: bestThree, bigImg: bestThree,
-            color1: '#D0A5EA', color2: '#909225', color3: '#748C70', link: "cool-weave"
-        },
-    ]
+    const { products } = useAppSelector(state => state.allProducts)
 
     return (
         <section>
@@ -35,20 +18,22 @@ const BestSellers = () => {
                 </div>
 
                 <Swiper
-                    modules={[Pagination]}
+                    modules={[Autoplay, Pagination]}
                     pagination={{ clickable: true }}
                     slidesPerView={2}
                     slidesPerGroup={1}
                     spaceBetween={16}
+                    loop={true}
+                    autoplay={{ delay: 1500 }}
                     breakpoints={{
                         640: { slidesPerView: 3, spaceBetween: 16 },
                         1024: { slidesPerView: 3, spaceBetween: 24 },
                     }}
                 >
 
-                    {bestObj.map((obj, ind) => (
+                    {products.slice(0, 6).map((product, ind) => (
                         <SwiperSlide key={ind}>
-                            <BestSellersCard cardInfo={obj} />
+                            <ProductCard product={product}/>
                         </SwiperSlide>
                     ))}
                 </Swiper>

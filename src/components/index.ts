@@ -1,6 +1,5 @@
 import Header from "./Header/Header";
 import BestSellers from "./BestSellers/BestSellers";
-import BestSellersCard from "./BestSellersCard/BestSellersCard";
 import Collection from "./Collection/Collection";
 import ModiweekSlider from "./ModiweekSlider/ModiweekSlider";
 import Sustainability from "./Sustainability/Sustainability";
@@ -13,9 +12,11 @@ import NewInDropDown from "./Navigation/DropDownDetails/NewInDropDown/NewInDropD
 import PlusSizeDropDown from "./Navigation/DropDownDetails/PlusSizeDropDown/PlusSizeDropDown";
 import SustainDropDown from "./Navigation/DropDownDetails/SustainDropDown/SustainDropDown";
 import Search from "./Search/Search";
-import ProductCard from "./ProductCard/ProductCard";
-import Filters from "./Filters/Filters";
+import ProductCard from "./Product/ProductCard";
+import Filters from "./Filter/Filters";
+import ShoppingBag from "./ShoppingBag/ShoppingBag";
 
-export { Header, BestSellers, BestSellersCard, Collection, ModiweekSlider, Sustainability, FollowUs, Footer,
-    BurgerMenu, CollectionDropDown, NewInDropDown, PlusSizeDropDown, SustainDropDown, Search, ProductCard, Filters
+export { Header, BestSellers, Collection, ModiweekSlider, Sustainability, FollowUs, Footer,
+    BurgerMenu, CollectionDropDown, NewInDropDown, PlusSizeDropDown, SustainDropDown, Search, ProductCard, Filters,
+    ShoppingBag
 }

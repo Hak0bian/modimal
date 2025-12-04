@@ -2,21 +2,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 import ModiweekCard from '../ModiweekCard/ModiweekCard';
-import sunday from "../../assets/images/modiweek1.jpg";
-import monday from "../../assets/images/modiweek2.jpg";
-import tuesday from "../../assets/images/modiweek3.jpg";
-import wednesday from "../../assets/images/modiweek4.png";
-import thursday from "../../assets/images/modiweek5.png";
+import { useAppSelector } from '../../store/hooks';
 
 
 const ModiweekSlider = () => {
-    const days = [
-        { day: "Sunday", img: sunday },
-        { day: "Monday", img: monday },
-        { day: "Tuesday", img: tuesday },
-        { day: "Wednesday", img: wednesday },
-        { day: "Thursday", img: thursday },
-    ];
+    const { products } = useAppSelector(state => state.allProducts)
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
 
     return (
         <section>
@@ -34,13 +25,13 @@ const ModiweekSlider = () => {
                     loop={true}
                     autoplay={{ delay: 1500, disableOnInteraction: false }}
                     breakpoints={{
-                            640: {slidesPerView: 3},
-                            1024: {slidesPerView: 4, spaceBetween: 24, pagination: false}, 
-                        }}
+                        640: { slidesPerView: 3 },
+                        1024: { slidesPerView: 4, spaceBetween: 24, pagination: false },
+                    }}
                 >
-                    {days.map(({ day, img }) => (
-                        <SwiperSlide key={day}>
-                            <ModiweekCard img={img} day={day} />
+                    {products.slice(0, 5).map((product, i) => (
+                        <SwiperSlide key={i}>
+                            <ModiweekCard product={product} day={days[i]} />
                         </SwiperSlide>
                     ))}
                 </Swiper>

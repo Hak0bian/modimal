@@ -1,4 +1,4 @@
-import CreatAccount from "../../components/Forms/CreateAccount/CreatAccount"
+import CreatAccount from "../components/Forms/CreateAccount/CreatAccount"
 
 const RegisterPage = () => {
     return (

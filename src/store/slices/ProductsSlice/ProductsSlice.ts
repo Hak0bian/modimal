@@ -1,6 +1,7 @@
-import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import { productsThunk } from "./ProductsThunk";
+import { createSlice } from "@reduxjs/toolkit";
+import { productsThunk } from "./productsThunk";
 import type { IProductsType, IProductsStateType } from "../../../types/types";
+import { colors } from "../../../utils/arrays";
 
 
 const initialState: IProductsStateType = {
@@ -15,9 +16,21 @@ const productsSlice = createSlice({
     reducers: {},
     extraReducers(builder) {
         builder
-            .addCase(productsThunk.fulfilled, (state: any, action: PayloadAction<IProductsType[]>) => {
-                state.products = action.payload
+            .addCase(productsThunk.fulfilled, (state, action) => {
+                state.products = action.payload.map((product: IProductsType) => {
+
+                    const randomColors = new Set<string>();
+                    while (randomColors.size < 3) {
+                        randomColors.add(colors[Math.floor(Math.random() * colors.length)].color);
+                    }
+
+                    return {
+                        ...product,
+                        colors: [...randomColors]
+                    };
+                });
             })
+
             .addCase(productsThunk.pending, (state) => {
                 state.loadingProducts = true;
                 state.errorProducts = null;

@@ -1,23 +1,44 @@
-import { NavLink } from "react-router-dom"
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { productsThunk } from '../../store/slices/ProductsSlice/ProductsThunk';
+import { useMemo, useState } from "react";
+import { NavLink, useSearchParams } from "react-router-dom"
+import { useAppSelector } from "../../store/hooks";
 import { ProductCard, Filters } from "../index"
-import type { AppDispatch } from '../../store/store';
-import type { IProductsType } from "../../types/types";
 import shopAllSmall from '../../assets/images/shop-all-small.png'
 import shopAllBig from '../../assets/images/shop-all-big.png'
 import filter from '../../assets/images/filter.svg'
+import { classes } from "../../utils/tailwindClasses";
 
 
 const ShopAll = () => {
     const [openFilter, setOpenFilter] = useState<boolean>(false)
-    const dispatch = useDispatch<AppDispatch>();
-    const { products } = useSelector((state: any) => state.allProducts)
+    const { products } = useAppSelector((state) => state.allProducts)
+    const [params] = useSearchParams();
 
-    useEffect(() => {
-        dispatch(productsThunk());
-    }, [dispatch]);
+    const activeFilters: Record<string, string[]> = {};
+    params.forEach((value, key) => {
+        if (!activeFilters[key]) activeFilters[key] = [];
+        activeFilters[key].push(value);
+    });
+
+    const filteredProducts = useMemo(() => {
+        let allProducts = [...products];
+
+        for (const key in activeFilters) {
+            if (key === 'sort') continue;
+            const values = activeFilters[key];
+            allProducts = products.filter(p => values.includes((p as any)[key]));
+        }
+
+        if (activeFilters.sort?.length) {
+            const sortValue = activeFilters.sort[0];
+            if (sortValue === 'Rating(H-L)') allProducts.sort((a, b) => a.price - b.price);
+            if (sortValue === 'Rating(L-H)') allProducts.sort((a, b) => b.price - a.price);
+            if (sortValue === 'Price(H-L)') allProducts.sort((a, b) => a.rating - b.rating);
+            if (sortValue === 'Price(L-H)') allProducts.sort((a, b) => b.rating - a.rating);
+        }
+
+        return allProducts;
+    }, [products, activeFilters]);
+
 
     return (
         <section>
@@ -42,16 +63,18 @@ const ShopAll = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4 w-full sm:w-[67%] max-w-202 lg:gap-6">
                     {
-                        products.map((product: IProductsType, ind: number) => (
-                            <ProductCard key={ind} product={product} />
-                        ))
+                        filteredProducts.length === 0
+                            ? (<p>No products found</p>)
+                            : (
+                                filteredProducts.map(p => (
+                                    <ProductCard key={p._id} product={p} />
+                                ))
+                            )
                     }
                 </div>
             </div>
 
-
-            <div className={`fixed top-17 right-0 w-screen h-screen overflow-y-auto px-5 bg-primary pt-6 z-5 md:hidden 
-                    duration-300 ease-in-out ${openFilter ? "translate-x-0" : "translate-x-full"}`}>
+            <div className={`${classes.filtersDiv} ${openFilter ? "translate-x-0" : "translate-x-full"}`}>
                 <Filters setOpenFilter={setOpenFilter} />
             </div>
         </section>
