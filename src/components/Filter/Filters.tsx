@@ -1,6 +1,5 @@
 import close from "../../assets/images/close-icon.svg";
 import FilterBy from "./FilterDetails/FilterBy";
-// import FilterByColor from "./FilterDetails/FilterByColor";
 import SelectedOptions from "./FilterDetails/SelectedOptions";
 import { filters } from "../../utils/arrays";
 import FilterButtons from "./FilterDetails/FilterButtons";
@@ -21,7 +20,7 @@ const Filters = ({ setOpenFilter } : {setOpenFilter: (stete: boolean) => void}) 
 
             <SelectedOptions />
             <div className="flex flex-col gap-4 mt-4">
-                <FilterBy name='Sort By' filters={filters.sort} />
+                <FilterBy name='SortBy' filters={filters.sort} />
                 <FilterBy name='Size' filters={filters.size} />
                 <FilterBy name='Color' filters={filters.colors}/>
                 <FilterBy name='Type' filters={filters.type} />

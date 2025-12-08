@@ -7,7 +7,6 @@ const SelectedOptions = () => {
     const dispatch = useAppDispatch();
     const { selectedOptions } = useAppSelector(state => state.filter);
     
-
     return (
         <div className="flex flex-wrap gap-2">
             {selectedOptions.map((option, ind) => (

@@ -11,7 +11,7 @@ const FilterButtons = () => {
         const params = new URLSearchParams();
 
         selectedOptions.forEach(opt => {
-            params.append(opt.key, opt.value);
+            params.append(opt.key.toLowerCase().replace(' ',''), opt.value.toLowerCase());
         });
 
         navigate(`/shop-all?${params.toString()}`);

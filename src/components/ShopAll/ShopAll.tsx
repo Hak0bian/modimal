@@ -1,17 +1,19 @@
 import { useMemo, useState } from "react";
-import { NavLink, useSearchParams } from "react-router-dom"
+import { NavLink, useNavigate, useSearchParams } from "react-router-dom"
 import { useAppSelector } from "../../store/hooks";
 import { ProductCard, Filters } from "../index"
 import shopAllSmall from '../../assets/images/shop-all-small.png'
 import shopAllBig from '../../assets/images/shop-all-big.png'
 import filter from '../../assets/images/filter.svg'
 import { classes } from "../../utils/tailwindClasses";
+import { filters } from "../../utils/arrays";
 
 
 const ShopAll = () => {
     const [openFilter, setOpenFilter] = useState<boolean>(false)
     const { products } = useAppSelector((state) => state.allProducts)
     const [params] = useSearchParams();
+    const navigate = useNavigate();
 
     const activeFilters: Record<string, string[]> = {};
     params.forEach((value, key) => {
@@ -19,27 +21,89 @@ const ShopAll = () => {
         activeFilters[key].push(value);
     });
 
+    if (!activeFilters) {
+        navigate("/shop-all");
+    }
     const filteredProducts = useMemo(() => {
-        let allProducts = [...products];
+        let result = [...products];
 
-        for (const key in activeFilters) {
-            if (key === 'sort') continue;
-            const values = activeFilters[key];
-            allProducts = products.filter(p => values.includes((p as any)[key]));
+        const toLower = (arr?: string[]) => arr?.map((a) => a.toLowerCase()) ?? [];
+        const brandFilter = toLower(activeFilters.brand);
+        const categoryFilter = toLower(activeFilters.category);
+        const typeFilter = toLower(activeFilters.type);
+        const colorFilter = toLower(activeFilters.color);
+        const sizeFilter = toLower(activeFilters.size);
+        const sortFilter = activeFilters.sortby ?? [];
+
+        // BRAND
+        if (brandFilter.length) {
+            result = result.filter((p) =>
+                brandFilter.includes(p.brand.toLowerCase())
+            );
         }
 
-        if (activeFilters.sort?.length) {
-            const sortValue = activeFilters.sort[0];
-            if (sortValue === 'Rating(H-L)') allProducts.sort((a, b) => a.price - b.price);
-            if (sortValue === 'Rating(L-H)') allProducts.sort((a, b) => b.price - a.price);
-            if (sortValue === 'Price(H-L)') allProducts.sort((a, b) => a.rating - b.rating);
-            if (sortValue === 'Price(L-H)') allProducts.sort((a, b) => b.rating - a.rating);
+        // CATEGORY
+        if (categoryFilter.length) {
+            result = result.filter((p) =>
+                categoryFilter.includes(p.category.toLowerCase())
+            );
         }
 
-        return allProducts;
+        // TYPE
+        if (typeFilter.length) {
+            result = result.filter((p) => typeFilter.includes(p.type.toLowerCase()));
+        }
+
+        // COLOR
+        if (colorFilter.length) {
+            const colorHexFilter = colorFilter
+                .map((name) => {
+                    const found = filters.colors.find(
+                        (c) => c.label.toLowerCase() === name.toLowerCase()
+                    );
+                    return found?.color.toLowerCase();
+                })
+                .filter(Boolean) as string[];
+
+            result = result.filter((p) =>
+                p.colors.some((color) => colorHexFilter.includes(color.toLowerCase()))
+            );
+        }
+
+        // SIZE
+        if (sizeFilter.length) {
+            result = result.filter((p) =>
+                p.size.some((size) => sizeFilter.includes(size.toLowerCase()))
+            );
+        }
+
+        // SORTING
+        if (sortFilter.length) {
+            const sortValue = sortFilter[0];
+            switch (sortValue) {
+                case "rating(h-l)":
+                    result.sort((a, b) => b.rating - a.rating);
+                    break;
+                case "rating(l-h)":
+                    result.sort((a, b) => a.rating - b.rating);
+                    break;
+                case "price(h-l)":
+                    result.sort((a, b) => a.price - b.price);
+                    break;
+                case "price(l-h)":
+                    result.sort((a, b) => b.price - a.price);
+                    break;
+                case "newest":
+                    result.sort((a, b) => Number(b.isNew) - Number(a.isNew));
+                    break;
+            }
+        }
+
+        return result;
     }, [products, activeFilters]);
 
 
+    
     return (
         <section>
             <div className="flex gap-3 text-[12px] px-5 py-6 sm:text-[14px] md:text-[16px] lg:text-[18px] lg:pt-8 lg:pb-12">

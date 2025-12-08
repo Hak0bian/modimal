@@ -41,7 +41,7 @@ export const filters = {
     ],
     category: [
         { label: 'Women', value: 'Women' },
-        { label: 'Man', value: 'Man' },
+        { label: 'Men', value: 'Men' },
         { label: 'Kids', value: 'Kids' },
     ],
 };
