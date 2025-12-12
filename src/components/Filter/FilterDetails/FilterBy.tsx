@@ -12,14 +12,13 @@ const FilterBy = ({ name, filters }: IFilterByPropsType) => {
     const [openOptions, setOpenOptions] = useState(false);
     const [height, setHeight] = useState("0px");
     const contentRef = useRef<HTMLDivElement>(null);
+    const isSelected = (value: string) => selectedOptions.some(opt => opt.key === name.toLowerCase() && opt.value === value);
 
     const toggleSort = () => {
         if (!contentRef.current) return;
         setHeight(openOptions ? "0px" : `${contentRef.current.scrollHeight}px`);
         setOpenOptions(!openOptions);
     };
-
-    const isSelected = (value: string) => selectedOptions.some(opt => opt.key === name.toLowerCase() && opt.value === value);
 
 
     return (

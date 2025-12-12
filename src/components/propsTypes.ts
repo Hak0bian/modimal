@@ -1,3 +1,5 @@
+import type { IProductsType } from "../types/types";
+
 export interface INavContentPropsType {
     toggleMenu: (menu: string) => void;
     searchIsOpen: boolean;
@@ -34,6 +36,11 @@ export interface IModalsPropsType {
     setOpenModal: (state: boolean) => void
 }
 
+export interface ISearchPropsType {
+    searchIsOpen: boolean,
+    setSearchIsOpen: (state: boolean) => void
+}
+
 export interface IFilterByPropsType {
     name: string;
     filters: {
@@ -42,4 +49,11 @@ export interface IFilterByPropsType {
         color?: string;
         border?: boolean
     }[];
+}
+
+export interface IGenericShopPropsType {
+    products: IProductsType[];
+    pageTitle: string;
+    imageSmall: string;
+    imageBig: string;
 }

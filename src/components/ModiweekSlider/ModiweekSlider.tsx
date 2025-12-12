@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
-import ModiweekCard from '../ModiweekCard/ModiweekCard';
+import ModiweekCard from './ModiweekCard';
 import { useAppSelector } from '../../store/hooks';
 
 
@@ -22,7 +22,7 @@ const ModiweekSlider = () => {
                     slidesPerView={2}
                     slidesPerGroup={1}
                     spaceBetween={16}
-                    loop={true}
+                    loop={products.length > 3}
                     autoplay={{ delay: 1500, disableOnInteraction: false }}
                     breakpoints={{
                         640: { slidesPerView: 3 },

@@ -14,9 +14,9 @@ import SustainDropDown from "./Navigation/DropDownDetails/SustainDropDown/Sustai
 import Search from "./Search/Search";
 import ProductCard from "./Product/ProductCard";
 import Filters from "./Filter/Filters";
-import ShoppingBag from "./ShoppingBag/ShoppingBag";
+import ShoppingCart from "./ShoppingCart/ShoppingCart";
 
 export { Header, BestSellers, Collection, ModiweekSlider, Sustainability, FollowUs, Footer,
     BurgerMenu, CollectionDropDown, NewInDropDown, PlusSizeDropDown, SustainDropDown, Search, ProductCard, Filters,
-    ShoppingBag
+    ShoppingCart
 }

@@ -9,8 +9,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const ProductCard = ({ product }: { product: IProductsType }) => {
     const dispatch = useAppDispatch();
-    const { items } = useAppSelector(state => state.favorites);
-    const isFav = items.includes(product._id);
+    const { FavItems } = useAppSelector(state => state.favorites);
+    const isFav = FavItems.includes(product._id);
 
     const handleFavorite = (e: React.MouseEvent) => {
         e.preventDefault();

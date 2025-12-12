@@ -1,8 +1,19 @@
-import ShopAll from "../components/ShopAll/ShopAll"
+import GenericShopPage from "../components/GenericShopPage/GenericShopPage"
+import { useAppSelector } from "../store/hooks"
+import shopAllSmall from '../assets/images/shop-all-small.png'
+import shopAllBig from '../assets/images/shop-all-big.png'
 
 const ShopAllPage = () => {
+    const { products } = useAppSelector((state) => state.allProducts)
+    
     return (
-        <ShopAll />
+        <GenericShopPage
+            products={products}
+            pageTitle="Shop All"
+            imageSmall={shopAllSmall}
+            imageBig={shopAllBig}
+        />
+
     )
 }
 

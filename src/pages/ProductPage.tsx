@@ -5,8 +5,8 @@ import ProductDetails from '../components/Product/ProductDetails';
 
 const ProductPage = () => {
     const { id } = useParams();
-    const { products } = useAppSelector((state: any) => state.allProducts)
-    const product: IProductsType | undefined = products.find((pr: { _id: string | undefined; }) => pr._id == id);
+    const { products } = useAppSelector(state => state.allProducts)
+    const product: IProductsType | undefined = products.find(pr => pr._id === Number(id))
 
     return (
         <section className='min-h-screen'>

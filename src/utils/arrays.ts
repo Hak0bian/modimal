@@ -1,9 +1,9 @@
 export const filters = {
     sort: [
-        { label: 'Rating: Low To High', value: 'Rating(H-L)' },
-        { label: 'Rating: High To Low', value: 'Rating(L-H)' },
-        { label: 'Price: Low To High', value: 'Price(H-L)' },
-        { label: 'Price: High To Low', value: 'Price(L-H)' },
+        { label: 'Rating: Low To High', value: 'Rating(L-H)' },
+        { label: 'Rating: High To Low', value: 'Rating(H-L)' },
+        { label: 'Price: Low To High', value: 'Price(L-H)' },
+        { label: 'Price: High To Low', value: 'Price(H-L)' },
     ],
     size: [
         { label: 'XS / US (0-4)', value: 'XS' },

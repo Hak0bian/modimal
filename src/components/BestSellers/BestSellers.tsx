@@ -14,7 +14,7 @@ const BestSellers = () => {
             <div className='xl:w-[1224px] px-5 m-auto xl:px-0'>
                 <div className='flex justify-between items-center mt-5 mb-2 md:mt-15 md:mb-4 xl:mt-22 xl:mb-6'>
                     <h2 className='text-[20px] font-bold leading-[1.4] md:text-[24px] xl:text-[32px] xl:font-semibold'>Best Sellers</h2>
-                    <NavLink to="/best-all" className="text-[14px] pr-4 hidden xl:flex">View All</NavLink>
+                    <NavLink to="/best-sellers" className="text-[14px] pr-4 hidden sm:flex">View All</NavLink>
                 </div>
 
                 <Swiper
@@ -23,7 +23,7 @@ const BestSellers = () => {
                     slidesPerView={2}
                     slidesPerGroup={1}
                     spaceBetween={16}
-                    loop={true}
+                    loop={products.length > 4}
                     autoplay={{ delay: 1500 }}
                     breakpoints={{
                         640: { slidesPerView: 3, spaceBetween: 16 },

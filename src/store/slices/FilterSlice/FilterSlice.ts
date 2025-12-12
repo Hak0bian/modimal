@@ -6,10 +6,12 @@ interface SelectedOption {
 }
 interface IFiltersArrayType {
     selectedOptions: SelectedOption[];
+    filterIsOpen: boolean
 }
 
 const initialState: IFiltersArrayType = {
-    selectedOptions: []
+    selectedOptions: [],
+    filterIsOpen: false
 };
 
 const filterSlice = createSlice({
@@ -18,7 +20,6 @@ const filterSlice = createSlice({
     reducers: {
         toggleOption(state, action: PayloadAction<SelectedOption>) {
             const option = action.payload;
-
             const existsIndex = state.selectedOptions.findIndex(
                 item => item.key === option.key && item.value === option.value
             );
@@ -29,6 +30,9 @@ const filterSlice = createSlice({
                 state.selectedOptions.push(option);
             }
         },
+        openCloseFilter(state, action: PayloadAction<boolean>) {
+            state.filterIsOpen = action.payload
+        },
         clearFilters(state) {
             state.selectedOptions = [];
         }
@@ -36,4 +40,4 @@ const filterSlice = createSlice({
 });
 
 export default filterSlice.reducer;
-export const { toggleOption, clearFilters } = filterSlice.actions;
+export const { toggleOption, openCloseFilter, clearFilters } = filterSlice.actions;

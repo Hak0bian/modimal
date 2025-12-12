@@ -34,7 +34,7 @@ const PlusSizeDropDown = () => {
                         <p className={classes.dropMenuImgName}>Dresses</p>
                     </div>
                     <div>
-                        <img src={plus3} alt="plus size image" className="w-44 xl:w-52" />
+                        <img src={plus3} alt="plus size image" className="w-44 xl:w-52 h-105 object-cover" />
                         <p className={classes.dropMenuImgName}>Blouses</p>
                     </div>
                 </div>

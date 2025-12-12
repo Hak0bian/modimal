@@ -2,9 +2,9 @@ import { ProductCard } from "../components";
 import { useAppSelector } from "../store/hooks"
 
 const FavorivesPage = () => {
+    const { FavItems } = useAppSelector(state => state.favorites);
     const { products } = useAppSelector((state) => state.allProducts)
-    const { items } = useAppSelector(state => state.favorites);
-    const favoriteProducts = products.filter(p => items.includes(p._id));
+    const favoriteProducts = products.filter(p => FavItems.includes(p._id));
 
     return (
         <>

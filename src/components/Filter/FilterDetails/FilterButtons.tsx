@@ -1,11 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import { clearFilters } from "../../../store/slices/FilterSlice/filterSlice";
+import { clearFilters, openCloseFilter } from "../../../store/slices/FilterSlice/filterSlice";
 
 const FilterButtons = () => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
     const { selectedOptions } = useAppSelector(state => state.filter);
+
+    // console.log(selectedOptions);
+    
 
     const applyFilters = () => {
         const params = new URLSearchParams();
@@ -14,7 +17,8 @@ const FilterButtons = () => {
             params.append(opt.key.toLowerCase().replace(' ',''), opt.value.toLowerCase());
         });
 
-        navigate(`/shop-all?${params.toString()}`);
+        navigate(`?${params.toString()}`);
+        dispatch(openCloseFilter(false))
     };
 
     return (

@@ -27,7 +27,7 @@ const CollectionDropDown = () => {
                             <li className={classes.dropMenuItem}><NavLink to="/new-in">New In</NavLink></li>
                             <li className={classes.dropMenuItem}><NavLink to="/modiWeek">ModiWeek</NavLink></li>
                             <li className={classes.dropMenuItem}><NavLink to="/plus-size">Plus Size</NavLink></li>
-                            <li className={classes.dropMenuItem}><NavLink to="/best-seller">Best Seller</NavLink></li>
+                            <li className={classes.dropMenuItem}><NavLink to="/best-sellers">Best Seller</NavLink></li>
                         </ul>
                     </div>
                     <div className="w-[154px] mr-0 xl:mr-[54px]">

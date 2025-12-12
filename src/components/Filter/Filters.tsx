@@ -3,17 +3,18 @@ import FilterBy from "./FilterDetails/FilterBy";
 import SelectedOptions from "./FilterDetails/SelectedOptions";
 import { filters } from "../../utils/arrays";
 import FilterButtons from "./FilterDetails/FilterButtons";
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch } from "../../store/hooks";
+import { openCloseFilter } from "../../store/slices/FilterSlice/filterSlice";
 
 
-const Filters = ({ setOpenFilter } : {setOpenFilter: (stete: boolean) => void}) => {
-    const { selectedOptions } = useAppSelector(state => state.filter);
+const Filters = () => {
+    const dispatch = useAppDispatch();
 
     return (
         <div className="mb-40">
             <div className="flex justify-between items-center pr-4 pb-4">
                 <h2 className="text-[24px] font-bold">Filters</h2>
-                <button onClick={() => setOpenFilter(false)} className="sm:hidden">
+                <button onClick={() => dispatch(openCloseFilter(false))} className="sm:hidden">
                     <img src={close} alt="close icon" />
                 </button>
             </div>
@@ -26,9 +27,7 @@ const Filters = ({ setOpenFilter } : {setOpenFilter: (stete: boolean) => void}) 
                 <FilterBy name='Type' filters={filters.type} />
                 <FilterBy name='Brand' filters={filters.brand} />
                 <FilterBy name='Category' filters={filters.category} />
-                {
-                    selectedOptions.length > 0 && <FilterButtons/>
-                }
+                <FilterButtons />
             </div>
         </div>
     )

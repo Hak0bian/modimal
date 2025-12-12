@@ -26,13 +26,13 @@ export const classes = {
     footerMenuItem: "transition-all duration-300 hover:text-lightgray",
     
     registerInput: "w-full h-8 border border-[#606060] outline-none mb-0.5 px-4 placeholder:text-[12px] text-[12px] xs:h-10 lg:w-[392px]",
-    errorMessage: "text-red-600 text-[11px]",
+    errorMessage: "text-red-500 text-[11px]",
     formsTitle: "text-[16px] font-bold text-center mb-8 xs:text-[24px] lg:text-[32px] lg:font-semibold sm:hidden",
     formsFlexDiv: "sm:flex gap-5 md:gap-10 lg:gap-20 xl:gap-32 sm:items-center",
-    formsBtn: "w-full h-8 bg-bg_green text-primary mt-2 mb-4 xs:h-10 lg:w-[392px] cursor-pointer hover:bg-green duration-300",
+    formsBtn: "w-full h-8 bg-bg_green text-primary mt-2 mb-4 xs:h-10 lg:w-[392px] cursor-pointer hover:bg-green-900 duration-300",
     
-    modalBtn: "w-[164px] h-10 text-primary text-[14px] bg-bg_green hover:bg-green duration-300 cursor-pointer sm:w-[200px] lg:w-[390px] lg:text-[16px]",
-    favoriteBtn: "absolute top-2 right-2 p-0.5 bg-transparent cursor-pointer md:top-4 md:right-4 xl:top-6 xl:right-6",
+    modalBtn: "w-[164px] h-10 text-primary text-[14px] bg-bg_green hover:bg-green-900 duration-300 cursor-pointer sm:w-[200px] lg:w-[390px] lg:text-[16px]",
+    favoriteBtn: "absolute top-2 right-2 p-1 bg-transparent cursor-pointer md:top-4 md:right-4 xl:top-6 xl:right-6",
     newBtn: "w-14 h-8 bg-primary text-[12px] grid place-content-center absolute top-2 left-2 md:top-4 md:left-4 xl:top-6 xl:left-6 md:w-20",
     colorBtn: "w-4 h-4 rounded-full cursor-pointer sm:mt-3 md:w-5 md:h-5 xl:w-6 xl:h-6",
     checkbox: "w-4 h-4 appearance-none border border-[#A2B39F] checked:bg-bg_green",
@@ -41,6 +41,5 @@ export const classes = {
     bagBtn: "text-[14px] w-[184px] h-10 text-primary bg-bg_green grid place-content-center",
     bagDiv: "bg-primary duration-300 ease-in-out overflow-y-auto max-w-98 h-screen fixed top-[68px] right-0 w-screen px-5 pt-6 z-6 md:absolute md:top-0 md:right-5 md:h-auto md:translate-x-0 xl:right-[108px]",
     filtersDiv: "fixed top-17 right-0 w-screen h-screen overflow-y-auto px-5 bg-primary pt-6 z-5 md:hidden duration-300 ease-in-out"
-
 
 };

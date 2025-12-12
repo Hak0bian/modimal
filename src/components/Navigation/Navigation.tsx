@@ -1,4 +1,4 @@
-import { BurgerMenu, CollectionDropDown, NewInDropDown, PlusSizeDropDown, Search, ShoppingBag, SustainDropDown } from '../index'
+import { BurgerMenu, CollectionDropDown, NewInDropDown, PlusSizeDropDown, Search, ShoppingCart, SustainDropDown } from '../index'
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom';
 import NavMainContent from './NavMainContent/NavMainContent';
@@ -8,7 +8,7 @@ const Navigation = () => {
     const location = useLocation();
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
     const [isVisible, setIsVisible] = useState(false);
-    const [searchIsOpen, setSearchIsOpen] = useState(false)
+    const [searchIsOpen, setSearchIsOpen] = useState<boolean>(false)
     const [burgerIsOpen, setBurgerIsOpen] = useState<boolean>(false)
     const [bagIsOpen, setBagIsOpen] = useState<boolean>(false)
     const closeMenu = () => setActiveMenu(null);
@@ -44,20 +44,21 @@ const Navigation = () => {
                     setBagIsOpen={setBagIsOpen}
                 />
 
-                {/* Shopping Bag */}
                 <div className={`
                     ${classes.bagDiv}
                     ${bagIsOpen ? "translate-x-0 md:translate-y-17 xl:translate-y-[110px]" : " translate-x-full md:-translate-y-full"}
                 `}>
-                    <ShoppingBag setBagIsOpen={setBagIsOpen} />
+                    <ShoppingCart setBagIsOpen={setBagIsOpen} />
                 </div>
             </nav>
+            
             <BurgerMenu burgerIsOpen={burgerIsOpen} />
-            <Search searchIsOpen={searchIsOpen} />
+            <Search searchIsOpen={searchIsOpen} setSearchIsOpen={setSearchIsOpen}/>
 
             {/* Overlay */}
             {activeMenu && ( <div onClick={closeMenu} className="w-full m-auto fixed inset-0 bg-black/50 z-4 hidden lg:block"/> )}
             {bagIsOpen && ( <div onClick={() => setBagIsOpen(false)} className="w-full m-auto fixed inset-0 bg-black/50 z-4"/> )}
+            {searchIsOpen && ( <div onClick={() => setSearchIsOpen(false)} className="w-full m-auto fixed inset-0 bg-black/50 z-4"/> )}
 
             {/* DropDowns */}
             <div className={`
