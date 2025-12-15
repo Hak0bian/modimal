@@ -14,14 +14,32 @@ const ProductMainInfo = ({ product }: { product: IProductsType }) => {
     const dispatch = useAppDispatch()
     const { FavItems } = useAppSelector(state => state.favorites);
     const isFav = FavItems.includes(product._id);
-    const [sizeValue, setSizevalue] = useState<string>("")
+    const [sizeValue, setSizeValue] = useState<string>(product.size[1])
+    const [colorValue, setColorValue] = useState<string>("")
+    const [showError, setShowError] = useState(false)
 
-    console.log(product.colors);
-    
+    const handleAddToCart = () => {
+        if (!sizeValue || !colorValue) {
+            setShowError(true)
+            return
+        }
+
+        dispatch(
+            toggleCartItems({
+                id: product._id,
+                size: sizeValue,
+                color: colorValue
+            })
+        )
+        setShowError(false)
+    }
 
     useEffect(() => {
-        setSizevalue("");
-    }, [product._id]);
+        setSizeValue("")
+        setColorValue("")
+        setShowError(false)
+    }, [product._id])
+
 
     return (
         <div className="sm:flex gap-5 sm:px-5 lg:gap-6 justify-start xl:justify-center">
@@ -35,20 +53,26 @@ const ProductMainInfo = ({ product }: { product: IProductsType }) => {
 
                 <div>
                     <p>Colors</p>
-                    <div className='flex gap-2 pt-2'>
-                        {product.colors.map((c, i) => (
-                            <button key={i}
-                                style={{ backgroundColor: c }}
-                                className={`${classes.colorBtn} ${c === "#FFFFFF" ? "border border-gray-400" : ""}`}
-                            />
-                        ))}
+                    <div className="flex gap-2 pt-2">
+                        {product.colors.map((c, i) => {
+                            const isSelected = colorValue === c
+                            return (
+                                <button key={i} type="button" onClick={() => setColorValue(c)} style={{ backgroundColor: c }}
+                                    className={`transition
+                                        ${classes.colorBtn}
+                                        ${c === "#FFFFFF" ? "border border-gray-400" : ""}
+                                        ${isSelected ? "ring-2 ring-gray-400 scale-110" : ""}
+                                    `}
+                                />
+                            )
+                        })}
                     </div>
                 </div>
 
                 <div className="relative">
                     <p className="text-[14px] text-[#868686] text-right lg:mb-2">Size Guide</p>
                     <select
-                        onChange={(e) => setSizevalue(e.target.value)}
+                        onChange={(e) => setSizeValue(e.target.value)}
                         className="w-full h-10 outline-0 text-[14px] font-semibold border border-[#DFDFDF] pl-5 appearance-none lg:text-[16px] cursor-pointer">
                         <option hidden className="text-[12px] font-semibold">Size</option>
                         {product.size.map((s, i) => (
@@ -59,11 +83,13 @@ const ProductMainInfo = ({ product }: { product: IProductsType }) => {
                 </div>
 
                 <button
-                    onClick={() => dispatch(toggleCartItems({ id: product._id, size: sizeValue }))}
+                    onClick={handleAddToCart}
                     className="w-full h-10 bg-bg_green text-[14px] text-primary cursor-pointer duration-300 hover:bg-green-900"
                 >
                     Add To Cart ( ${product.price} )
                 </button>
+                {showError && (<p className="text-center text-red-500 text-[14px]">Please select size and color</p>)}
+
                 <div className="flex flex-col lg:flex-row lg:justify-between lg:px-5">
                     <button
                         onClick={() => dispatch(toggleFavorite(product._id))}

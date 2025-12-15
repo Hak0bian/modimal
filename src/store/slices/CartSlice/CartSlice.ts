@@ -3,6 +3,7 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 interface ICartItemType {
     id: number;
     size: string;
+    color: string
 }
 
 interface ICartStateType {
@@ -19,18 +20,18 @@ export const CartSlice = createSlice({
     initialState,
     reducers: {
         toggleCartItems: (state, action: PayloadAction<ICartItemType>) => {
-            const { id, size } = action.payload;
+            const { id, size, color } = action.payload;
 
             const existsIndex = state.cartItems.findIndex(
-                item => item.id === id && item.size === size
+                item => item.id === id && item.size === size && item.color === color
             );
 
             if (existsIndex > -1) {
                 state.cartItems = state.cartItems.filter(
-                    item => !(item.id === id && item.size === size)
+                    item => !(item.id === id && item.size === size && item.color === color)
                 );
             } else {
-                state.cartItems.push({ id, size });
+                state.cartItems.push({ id, size, color });
             }
 
             localStorage.setItem('CartItems', JSON.stringify(state.cartItems));
