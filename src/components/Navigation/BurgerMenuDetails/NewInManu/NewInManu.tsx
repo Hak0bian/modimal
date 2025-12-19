@@ -28,22 +28,22 @@ const NewInManu = ({ expanded, onChange }: IAccordionPropsType) => {
                             <div className="pb-6">
                                 <h3 className={classes.burgerMenuTitle}>Category</h3>
                                 <ul className={classes.burgerMenuList}>
-                                    <li className={classes.burgerMenuItem}><NavLink to={'/shop-all'}>Shop All</NavLink></li>
-                                    <li className={classes.burgerMenuItem}><NavLink to={'/blouses&top'}>Boluses & Top</NavLink></li>
-                                    <li className={classes.burgerMenuItem}><NavLink to={'/tees'}>Tees</NavLink></li>
-                                    <li className={classes.burgerMenuItem}><NavLink to={'/pants'}>Pants</NavLink></li>
-                                    <li className={classes.burgerMenuItem}><NavLink to={'/outwear&jackets '}>Outwear & Jackets </NavLink></li>
-                                    <li className={classes.burgerMenuItem}><NavLink to={'/pullovers'}>Pullovers</NavLink></li>
-                                    <li className={classes.burgerMenuItem}><NavLink to={'/dresses&jumpsuits'}>Dresses & Jumpsuits</NavLink></li>
-                                    <li className={classes.burgerMenuItem}><NavLink to={'/shorts&skirts'}>Shorts & Skirts</NavLink></li>
+                                    <li className={classes.burgerMenuItem}><NavLink to={'/new-in'}>Shop All</NavLink></li>
+                                    <li className={classes.burgerMenuItem}>Boluses & Top</li>
+                                    <li className={classes.burgerMenuItem}>Tees</li>
+                                    <li className={classes.burgerMenuItem}>Pants</li>
+                                    <li className={classes.burgerMenuItem}>Outwear & Jackets </li>
+                                    <li className={classes.burgerMenuItem}>Pullovers</li>
+                                    <li className={classes.burgerMenuItem}>Dresses & Jumpsuits</li>
+                                    <li className={classes.burgerMenuItem}>Shorts & Skirts</li>
                                 </ul>
                             </div>
                             <div className="pb-6">
                                 <h3 className={classes.burgerMenuTitle}>Tranding</h3>
                                 <ul className={classes.burgerMenuList}>
                                     <li className={classes.burgerMenuItem}><NavLink to="/plus-size">Plus Size</NavLink></li>
-                                    <li className={classes.burgerMenuItem}><NavLink to="/Collection">Full Collection</NavLink></li>
-                                    <li className={classes.burgerMenuItem}><NavLink to="/modiWeek">ModiWeek</NavLink></li>
+                                    <li className={classes.burgerMenuItem}>Full Collection</li>
+                                    <li className={classes.burgerMenuItem}>ModiWeek</li>
                                 </ul>
                             </div>
                         </div>

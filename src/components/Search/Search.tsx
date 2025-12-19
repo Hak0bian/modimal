@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import searchIcon from '../../assets/images/search-gray-icon.svg'
 import searchIconBig from '../../assets/images/search-icon-big.svg'
 import removeIcon from '../../assets/images/close-gray-icon.svg'
@@ -15,7 +15,7 @@ const Search = ({ searchIsOpen, setSearchIsOpen }: ISearchPropsType) => {
     const [inputValue, setInputValue] = useState<string>("");
     const [results, setResults] = useState<IProductsType[]>([])
     const [searchTerm, setSearchTerm] = useState(inputValue);
-    const [navigatedToSearch, setNavigatedToSearch] = useState(false);
+    const prevSearchTermRef = useRef("");
 
     useEffect(() => {
         const timeout = setTimeout(() => {
@@ -28,21 +28,22 @@ const Search = ({ searchIsOpen, setSearchIsOpen }: ISearchPropsType) => {
     useEffect(() => {
         if (!searchTerm) {
             setResults([]);
-            setNavigatedToSearch(false);
+            prevSearchTermRef.current = "";
             return;
         }
 
-        const searched = products.filter(item =>
+        const searched = products.filter((item) =>
             item.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
         setResults(searched);
 
-        if (searched.length > 0 && !navigatedToSearch) {
+        if (searched.length > 0 && prevSearchTermRef.current !== searchTerm) {
+            prevSearchTermRef.current = searchTerm;
             navigate(`/search?q=${encodeURIComponent(searchTerm)}`);
             setSearchIsOpen(false);
-            setNavigatedToSearch(true);
         }
     }, [searchTerm, products, navigate]);
+
 
 
     return (

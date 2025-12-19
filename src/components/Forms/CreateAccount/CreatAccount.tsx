@@ -27,7 +27,7 @@ const CreatAccount = () => {
                                 <span>By Clicking Register Now You Agree To </span>
                                 <NavLink to='/terms&conditions' className="text-bg_green">Terms & Conditions</NavLink>
                                 <span> And </span>
-                                <NavLink to='/privacy-policy' className="text-bg_green underline">Privacy Policy</NavLink>. 
+                                <NavLink to='' className="text-bg_green underline">Privacy Policy</NavLink>. 
                             </p>
                         </div>
                     </div>

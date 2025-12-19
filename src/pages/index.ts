@@ -8,7 +8,11 @@ import ShopAllPage from "./ShopAllPage";
 import NewInPage from "./NewInPage";
 import PlusSizePage from "./PlusSizePage";
 import SearchResultsPage from "./SearchResultsPage";
+import CartPage from "./CartPage";
+import ShippingPage from "./ShippingPage";
+import ContactUsPage from "./ContactUsPage";
+
 
 export { HomePage, RegisterPage, LoginPage, ProductPage, FavorivesPage, BestSellersAllPage,
-        ShopAllPage, NewInPage, PlusSizePage, SearchResultsPage, 
+        ShopAllPage, NewInPage, PlusSizePage, SearchResultsPage, CartPage, ShippingPage, ContactUsPage
 }

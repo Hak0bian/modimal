@@ -1,7 +1,7 @@
 import Layout from './components/Layout/Layout'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { HomePage, LoginPage, RegisterPage, ProductPage, FavorivesPage, BestSellersAllPage, 
-    ShopAllPage, NewInPage, PlusSizePage, SearchResultsPage,  } from './pages'
+    ShopAllPage, NewInPage, PlusSizePage, SearchResultsPage, CartPage, ShippingPage, ContactUsPage } from './pages'
 import { useAppDispatch } from './store/hooks';
 import { productsThunk } from './store/slices/ProductsSlice/productsThunk';
 import { useEffect } from 'react';
@@ -29,6 +29,9 @@ function App() {
           <Route path='/new-in' element={<NewInPage />} />
           <Route path='/plus-size' element={<PlusSizePage />} />
           <Route path='/search' element={<SearchResultsPage />} />
+          <Route path='/cart' element={<CartPage />} />
+          <Route path='/shipping' element={<ShippingPage />} />
+          <Route path='/contact-us' element={<ContactUsPage />} />
         </Route>
       </Routes>
     </section>

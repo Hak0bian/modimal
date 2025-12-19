@@ -9,7 +9,7 @@ const ShoppingCart = ({ setBagIsOpen }: { setBagIsOpen: (state: boolean) => void
     const { cartItems } = useAppSelector(state => state.cart)
     
     return (
-        <div className="relative pt-20 max-w-100">
+        <div className="relative pt-20">
             {
                 cartItems.length === 0
                     ? (
@@ -21,23 +21,30 @@ const ShoppingCart = ({ setBagIsOpen }: { setBagIsOpen: (state: boolean) => void
                             </div>
 
                             <div className="flex flex-col items-center gap-6 my-20">
-                                <NavLink to='/collection' className={classes.bagBtn}>Collection</NavLink>
                                 <NavLink to='/new-in' className={classes.bagBtn}>New In</NavLink>
                                 <NavLink to='/best-sellers' className={classes.bagBtn}>Best Sellers</NavLink>
+                                <NavLink to='/plus-size' className={classes.bagBtn}>Plus Size</NavLink>
                             </div>
 
                         </div>
                     ) : (
-                        <CartItem />
+                        <div className="max-h-100 overflow-y-auto flex flex-col gap-8">
+                            <CartItem />
+                        </div>
                     )
             }
             <button className="absolute top-0 left-0 md:left-auto md:right-1 cursor-pointer" onClick={() => setBagIsOpen(false)}>
                 <img src={close} alt="close bag" />
             </button>
 
-            <div className="text-center my-8">
-                <button className="w-[184px] h-10 bg-bg_green text-[14px] text-primary">Check Out</button>
-            </div>
+            <NavLink to='/cart'>
+                <div className="text-center my-8">
+                    { 
+                        cartItems.length > 0 && 
+                        <button className="w-[184px] h-10 bg-bg_green text-[14px] text-primary cursor-pointer">Check Out</button> 
+                    }
+                </div>
+            </NavLink>
         </div>
     )
 }

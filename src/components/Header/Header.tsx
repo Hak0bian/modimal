@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 
 const Header = () => {
     return (
@@ -8,7 +9,9 @@ const Header = () => {
                 <p className="h-[70px] text-[20px] leading-[1.8] font-['sansmt'] italic mb-8 xl:mb-0 xs:text-[28px] xl:h-[130px] xl:text-[34px]">
                     Elegance in simplicity, Earth’s harmony
                 </p>
-                <button className="w-17 h-10 border-none bg-primary text-[14px] cursor-pointer sm:w-[184px] xs:mt-7">New In</button>
+                <NavLink to='/new-in'>
+                    <button className="w-17 h-10 border-none bg-primary text-[14px] cursor-pointer xs:w-[150px] sm:w-[184px] xs:mt-7">New In</button>
+                </NavLink>
             </div>
         </header>
     )

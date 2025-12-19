@@ -40,6 +40,6 @@ export const classes = {
     
     bagBtn: "text-[14px] w-[184px] h-10 text-primary bg-bg_green grid place-content-center",
     bagDiv: "bg-primary duration-300 ease-in-out overflow-y-auto max-w-98 h-screen fixed top-[68px] right-0 w-screen px-5 pt-6 z-6 md:absolute md:top-0 md:right-5 md:h-auto md:translate-x-0 xl:right-[108px]",
-    filtersDiv: "fixed top-17 right-0 w-screen h-screen overflow-y-auto px-5 bg-primary pt-6 z-5 md:hidden duration-300 ease-in-out"
-
+    filtersDiv: "fixed top-17 right-0 w-screen h-screen overflow-y-auto px-5 bg-primary pt-6 z-5 md:hidden duration-300 ease-in-out",
+    shippingInput: "inline-block w-full h-10 border border-[#606060] outline-none mb-0.5 px-4 placeholder:text-[12px] text-[12px] mt-2 lg:w-[600px]",
 };

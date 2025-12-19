@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom'
 import chatIcon from '../../assets/images/chat-icon.svg'
 import FootMainContent from './FootMainContent'
 import FooterIcons from './FooterIcons'
@@ -9,10 +10,11 @@ const Footer = () => {
                 <FootMainContent />
                 <FooterIcons/>
                 
-                {/* Chat Button */}
-                <button className="absolute bottom-[72px] right-8 border-none bg-transparent cursor-pointer md:right-20 lg:bottom-14 lg:right-[108px]">
-                    <img src={chatIcon} alt="chat icon" />
-                </button>
+                <NavLink to='/contact-us'>
+                    <button className="absolute bottom-[72px] right-8 border-none bg-transparent cursor-pointer md:right-20 lg:bottom-14 lg:right-[108px]">
+                        <img src={chatIcon} alt="chat icon" />
+                    </button>
+                </NavLink>
             </div>
         </footer>
     )

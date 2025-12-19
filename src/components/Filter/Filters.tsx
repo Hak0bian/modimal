@@ -1,10 +1,10 @@
 import close from "../../assets/images/close-icon.svg";
 import FilterBy from "./FilterDetails/FilterBy";
 import SelectedOptions from "./FilterDetails/SelectedOptions";
-import { filters } from "../../utils/arrays";
-import FilterButtons from "./FilterDetails/FilterButtons";
 import { useAppDispatch } from "../../store/hooks";
 import { openCloseFilter } from "../../store/slices/FilterSlice/filterSlice";
+import { filters } from "../../utils/arrays";
+import FilterButtons from "./FilterDetails/FilterButtons";
 
 
 const Filters = () => {

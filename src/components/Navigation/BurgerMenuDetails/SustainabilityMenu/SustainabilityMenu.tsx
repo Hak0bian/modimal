@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom';
 import { classes } from '../../../../utils/tailwindClasses';
 import type { IAccordionPropsType } from '../../../propsTypes';
 import Accordion from '@mui/material/Accordion';
@@ -26,12 +25,12 @@ const SustainabilityMenu = ({ expanded, onChange }: IAccordionPropsType) => {
                         <div className='pb-6'>
                             <h3 className={classes.burgerMenuTitle}>Sustainability</h3>
                             <ul className={classes.burgerMenuList}>
-                                <li className={classes.burgerMenuItem}><NavLink to={'/mission'}>Mission</NavLink></li>
-                                <li className={classes.burgerMenuItem}><NavLink to={'/processing'}>Processing</NavLink></li>
-                                <li className={classes.burgerMenuItem}><NavLink to={'/materials'}>Materials</NavLink></li>
-                                <li className={classes.burgerMenuItem}><NavLink to={'/packaging '}>Packaging</NavLink></li>
-                                <li className={classes.burgerMenuItem}><NavLink to={'/product-care'}>Product Care</NavLink></li>
-                                <li className={classes.burgerMenuItem}><NavLink to={'/our-suppliers'}>Our Suppliers</NavLink></li>
+                                <li className={classes.burgerMenuItem}>Mission</li>
+                                <li className={classes.burgerMenuItem}>Processing</li>
+                                <li className={classes.burgerMenuItem}>Materials</li>
+                                <li className={classes.burgerMenuItem}>Packaging</li>
+                                <li className={classes.burgerMenuItem}>Product Care</li>
+                                <li className={classes.burgerMenuItem}>Our Suppliers</li>
                             </ul>
                         </div>
 

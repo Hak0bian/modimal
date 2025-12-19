@@ -31,31 +31,31 @@ const FootMainContent = () => {
                 <div>
                     <h4 className={classes.footerMenuTitle}>About Modimal</h4>
                     <ul className={classes.footerMenuList}>
-                        <NavLink to='/collection'><li className={classes.footerMenuItem}>Collection</li></NavLink>
-                        <NavLink to='/sustainability'><li className={classes.footerMenuItem}>Sustainability</li></NavLink>
-                        <NavLink to='/privacy-policy'><li className={classes.footerMenuItem}>Privacy Policy</li></NavLink>
-                        <NavLink to='support-system'><li className={classes.footerMenuItem}>Support System</li></NavLink>
-                        <NavLink to='terms&condition'><li className={classes.footerMenuItem}>Terms & Condition</li></NavLink>
-                        <NavLink to='copyright-notice'><li className={classes.footerMenuItem}>Copyright Notice</li></NavLink>
+                        <li className={classes.footerMenuItem}>Collection</li>
+                        <li className={classes.footerMenuItem}>Sustainability</li>
+                        <li className={classes.footerMenuItem}>Privacy Policy</li>
+                        <li className={classes.footerMenuItem}>Support System</li>
+                        <li className={classes.footerMenuItem}>Terms & Condition</li>
+                        <li className={classes.footerMenuItem}>Copyright Notice</li>
                     </ul>
                 </div>
                 {/* Help */}
                 <div>
                     <h4 className={classes.footerMenuTitle}>Help & Support</h4>
                     <ul className={classes.footerMenuList}>
-                        <NavLink to='orders&shipping'><li className={classes.footerMenuItem}>Orders & Shipping</li></NavLink>
-                        <NavLink to='returns&refunds'><li className={classes.footerMenuItem}>Returns & Refunds</li></NavLink>
-                        <NavLink to='faqs'><li className={classes.footerMenuItem}>FAQs</li></NavLink>
-                        <NavLink to='contact-us'><li className={classes.footerMenuItem}>Contact Us</li></NavLink>
+                        <li className={classes.footerMenuItem}>Orders & Shipping</li>
+                        <li className={classes.footerMenuItem}>Returns & Refunds</li>
+                        <li className={classes.footerMenuItem}>FAQs</li>
+                        <NavLink to='/contact-us'><li className={classes.footerMenuItem}>Contact Us</li></NavLink>
                     </ul>
                 </div>
                 {/* Join */}
                 <div>
                     <h4 className={classes.footerMenuTitle}>Join Up</h4>
                     <ul className={classes.footerMenuList}>
-                        <NavLink to='modimal-club'><li className={classes.footerMenuItem}>Modimal Club</li></NavLink>
-                        <NavLink to='careers'><li className={classes.footerMenuItem}>Careers</li></NavLink>
-                        <NavLink to='visit-us '><li className={classes.footerMenuItem}>Visit Us</li></NavLink>
+                        <li className={classes.footerMenuItem}>Modimal Club</li>
+                        <li className={classes.footerMenuItem}>Careers</li>
+                        <li className={classes.footerMenuItem}>Visit Us</li>
                     </ul>
                 </div>
             </div>

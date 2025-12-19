@@ -1,6 +1,7 @@
 import type { IProductsType } from "../types/types";
 import { filters } from "./arrays";
 
+
 const toLowerMap = (arr?: string[]) => arr?.map((v) => v.toLowerCase()) ?? [];
 export type ActiveFilters = Record<string, string[]>;
 export const getFiltersFromParams = (params: URLSearchParams): ActiveFilters => {

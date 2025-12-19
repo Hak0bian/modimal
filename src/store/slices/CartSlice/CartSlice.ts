@@ -8,11 +8,15 @@ interface ICartItemType {
 
 interface ICartStateType {
     cartItems: ICartItemType[];
+    totalAmount: number
+    counts: Record<string, number>;
 }
 
 const saved = localStorage.getItem('CartItems');
 const initialState: ICartStateType = {
-    cartItems: saved ? JSON.parse(saved) : []
+    cartItems: saved ? JSON.parse(saved) : [],
+    totalAmount: 0,
+    counts: {},
 };
 
 export const CartSlice = createSlice({
@@ -36,8 +40,22 @@ export const CartSlice = createSlice({
 
             localStorage.setItem('CartItems', JSON.stringify(state.cartItems));
         },
+        changeTotalAmount: (state, action: PayloadAction<number>) => {
+            state.totalAmount = action.payload
+        },
+        setItemCount: (state, action: PayloadAction<{ key: string; count: number }>) => {
+            state.counts[action.payload.key] = action.payload.count;
+        },
+        incrementItemCount: (state, action: PayloadAction<{ key: string; max?: number }>) => {
+            const current = state.counts[action.payload.key] ?? 1;
+            state.counts[action.payload.key] = Math.min(current + 1, action.payload.max ?? Infinity);
+        },
+        decrementItemCount: (state, action: PayloadAction<{ key: string }>) => {
+            const current = state.counts[action.payload.key] ?? 1;
+            state.counts[action.payload.key] = Math.max(current - 1, 1);
+        }
     },
 });
 
-export const { toggleCartItems } = CartSlice.actions;
+export const { toggleCartItems, changeTotalAmount, setItemCount, incrementItemCount, decrementItemCount } = CartSlice.actions;
 export default CartSlice.reducer;
